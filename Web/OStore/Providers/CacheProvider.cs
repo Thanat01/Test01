@@ -8,7 +8,7 @@ using OStore.Libs.Extensions;
 
 namespace OStore.Providers
 {
-    public class CacheProvider:Library.Api.Handler.CacheHandler 
+    public class CacheProvider : Library.Api.Handler.CacheHandler
     {
         private static CacheProvider _Instance;
         public static CacheProvider Instance
@@ -26,12 +26,12 @@ namespace OStore.Providers
                     List<ProvinceModel> provincs = PMApi.Instance.GetProvinces();
 
                     var cached = provincs.ToSelectList(d => d.Name, d => d.Id.ToString(), "0", "Select Provinces", false);
-                        if (cached != null)
-                        {
-                            cached.RemoveAll(item => item.Text == null);
-                            SaveTocache("Provinces", cached, DateTime.Now.AddHours(10));
-                        }
-                    
+                    if (cached != null)
+                    {
+                        cached.RemoveAll(item => item.Text == null);
+                        SaveTocache("Provinces", cached, DateTime.Now.AddHours(10));
+                    }
+
                 }
                 return GetFromCache<List<SelectListItem>>("Provinces");
             }
@@ -98,5 +98,75 @@ namespace OStore.Providers
         }
         #endregion
 
+        #region Delivery Channel
+
+        public List<CheckBox> Delivery1OptionsCheckbox
+        {
+            get
+            {
+
+                if (!IsIncache("Delivery1OptionsCheckbox"))
+                {
+                    List<CheckBox> options = new List<CheckBox>();
+                    options.Add(new CheckBox()
+                    {
+                        Checked = false,
+                        Text = "COD (Cash on Delivery)",
+                        Value = "COD"
+                    });
+                    options.Add(new CheckBox()
+                    {
+                        Checked = false,
+                        Text = "Bank Transfer",
+                        Value = "BT"
+                    });
+                    options.Add(new CheckBox()
+                    {
+                        Checked = false,
+                        Text = "Appointment Time",
+                        Value = "AT"
+                    });
+                  
+                    SaveTocache("Delivery1OptionsCheckbox", options, DateTime.Now.AddHours(10));
+                    // var roles = _roleService.GetAllRoles().ToCheckBoxList(c => c.Name, c => c.Id.ToString());
+                    //if (roles != null)
+                    //{
+                    //    SaveTocache("DeliveryOptionsCheckbox", roles, DateTime.Now.AddHours(10));
+                    //}
+                }
+                return GetFromCache<List<CheckBox>>("Delivery1OptionsCheckbox");
+
+            }
+        }
+
+        public List<CheckBox> Delivery2OptionsCheckbox
+        {
+            get
+            {
+
+                if (!IsIncache("Delivery2OptionsCheckbox"))
+                {
+                    List<CheckBox> options = new List<CheckBox>();
+                  
+                    options.Add(new CheckBox()
+                    {
+                        Checked = false,
+                        Text = "Bank Transfer",
+                        Value = "BT"
+                    });
+                    
+                    SaveTocache("Delivery2OptionsCheckbox", options, DateTime.Now.AddHours(10));
+                    // var roles = _roleService.GetAllRoles().ToCheckBoxList(c => c.Name, c => c.Id.ToString());
+                    //if (roles != null)
+                    //{
+                    //    SaveTocache("DeliveryOptionsCheckbox", roles, DateTime.Now.AddHours(10));
+                    //}
+                }
+                return GetFromCache<List<CheckBox>>("Delivery2OptionsCheckbox");
+
+            }
+        }
+
+        #endregion
     }
 }

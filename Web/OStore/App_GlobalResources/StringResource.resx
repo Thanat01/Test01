@@ -189,4 +189,31 @@
   <data name="Order_Manual_TotalAmount" xml:space="preserve">
     <value>Price product</value>
   </data>
+  <data name="Delivery_Setup_Title" xml:space="preserve">
+    <value>Set Up Delivery Channel</value>
+  </data>
+  <data name="Delivery_Setup_btnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Delivery_Setup_btnSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Delivery_Setup_Cost" xml:space="preserve">
+    <value>Shipping Cost:</value>
+  </data>
+  <data name="Delivery_Setup_D1Name" xml:space="preserve">
+    <value>Name: Alpha</value>
+  </data>
+  <data name="Delivery_Setup_ServiceDay" xml:space="preserve">
+    <value>Service day: </value>
+  </data>
+  <data name="Delivery_Setup_D1_Info" xml:space="preserve">
+    <value>Service Area: Bangkok, Nonthaburi, Samut Prakan, Pathum Thani</value>
+  </data>
+  <data name="Delivery_Setup_D2Name" xml:space="preserve">
+    <value>Name: Thaipost</value>
+  </data>
+  <data name="Delivery_Setup_D2_Info" xml:space="preserve">
+    <value>Service Area: Thailand</value>
+  </data>
 </root>

@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -172,6 +173,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DeliveryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NavbarController.cs" />
@@ -186,6 +188,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\FileUploadFormHelper.cs" />
+    <Compile Include="Libs\Extensions\CheckBoxListExtension.cs" />
     <Compile Include="Libs\Extensions\SelectListExtension.cs" />
     <Compile Include="ModelApi\GetCustomerModel.cs" />
     <Compile Include="ModelApi\GetLocationModel.cs" />
@@ -208,6 +211,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BankAccountModel.cs" />
     <Compile Include="Models\Customer\CustomerModel.cs" />
+    <Compile Include="Models\Delivery\DeliverySetupViewModel.cs" />
     <Compile Include="Models\Location\DistrictModel.cs" />
     <Compile Include="Models\Location\PostalCodeModel.cs" />
     <Compile Include="Models\Location\ProvinceModel.cs" />
@@ -680,7 +684,9 @@
     <Content Include="Content\FooTable\fonts\footable.ttf" />
     <Content Include="Content\FooTable\fonts\footable.woff" />
     <Content Include="Content\FooTable\footable.core.css" />
+    <Content Include="Content\Images\alpha_service_area-01.svg" />
     <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\thaipost_service_area-01.svg" />
     <Content Include="Content\sb-admin-2.css" />
     <Content Include="Content\timeline.css" />
     <Content Include="favicon.ico" />
@@ -1089,6 +1095,7 @@
     <Content Include="Views\SaleChannel\_OrderManual.cshtml" />
     <Content Include="Views\SaleChannel\_ImportOrder.cshtml" />
     <Content Include="Views\SaleChannel\_ReturnExchange.cshtml" />
+    <Content Include="Views\Delivery\Setup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

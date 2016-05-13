@@ -7,3 +7,7 @@ C:\Projects\OnlineStore\Library\Api\Library.Api.Handler\bin\Debug\Library.Api.Ha
 C:\Projects\OnlineStore\Library\Api\Library.Api.Handler\obj\Debug\Library.Api.Handler.csprojResolveAssemblyReference.cache
 C:\Projects\OnlineStore\Library\Api\Library.Api.Handler\obj\Debug\Library.Api.Handler.dll
 C:\Projects\OnlineStore\Library\Api\Library.Api.Handler\obj\Debug\Library.Api.Handler.pdb
+D:\OStore\Library\Api\Library.Api.Handler\bin\Debug\Library.Api.Handler.dll
+D:\OStore\Library\Api\Library.Api.Handler\bin\Debug\Library.Api.Handler.pdb
+D:\OStore\Library\Api\Library.Api.Handler\obj\Debug\Library.Api.Handler.dll
+D:\OStore\Library\Api\Library.Api.Handler\obj\Debug\Library.Api.Handler.pdb
