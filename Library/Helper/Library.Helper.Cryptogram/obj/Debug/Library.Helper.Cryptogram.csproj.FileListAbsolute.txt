@@ -2,3 +2,7 @@ C:\Projects\OnlineStore\Library\Helper\Library.Helper.Cryptogram\bin\Debug\Libra
 C:\Projects\OnlineStore\Library\Helper\Library.Helper.Cryptogram\bin\Debug\Library.Helper.Cryptogram.pdb
 C:\Projects\OnlineStore\Library\Helper\Library.Helper.Cryptogram\obj\Debug\Library.Helper.Cryptogram.dll
 C:\Projects\OnlineStore\Library\Helper\Library.Helper.Cryptogram\obj\Debug\Library.Helper.Cryptogram.pdb
+D:\OStore\Library\Helper\Library.Helper.Cryptogram\bin\Debug\Library.Helper.Cryptogram.dll
+D:\OStore\Library\Helper\Library.Helper.Cryptogram\bin\Debug\Library.Helper.Cryptogram.pdb
+D:\OStore\Library\Helper\Library.Helper.Cryptogram\obj\Debug\Library.Helper.Cryptogram.dll
+D:\OStore\Library\Helper\Library.Helper.Cryptogram\obj\Debug\Library.Helper.Cryptogram.pdb

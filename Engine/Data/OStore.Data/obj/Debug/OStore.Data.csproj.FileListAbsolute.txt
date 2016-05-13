@@ -8,3 +8,13 @@ C:\Projects\OnlineStore\Engine\Data\OStore.Data\bin\Debug\EntityFramework.SqlSer
 C:\Projects\OnlineStore\Engine\Data\OStore.Data\obj\Debug\OStore.Data.csprojResolveAssemblyReference.cache
 C:\Projects\OnlineStore\Engine\Data\OStore.Data\obj\Debug\OStore.Data.dll
 C:\Projects\OnlineStore\Engine\Data\OStore.Data\obj\Debug\OStore.Data.pdb
+D:\OStore\Engine\Data\OStore.Data\bin\Debug\OStore.Data.dll.config
+D:\OStore\Engine\Data\OStore.Data\bin\Debug\OStore.Data.dll
+D:\OStore\Engine\Data\OStore.Data\bin\Debug\OStore.Data.pdb
+D:\OStore\Engine\Data\OStore.Data\bin\Debug\EntityFramework.dll
+D:\OStore\Engine\Data\OStore.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\OStore\Engine\Data\OStore.Data\bin\Debug\EntityFramework.xml
+D:\OStore\Engine\Data\OStore.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\OStore\Engine\Data\OStore.Data\obj\Debug\OStore.Data.csprojResolveAssemblyReference.cache
+D:\OStore\Engine\Data\OStore.Data\obj\Debug\OStore.Data.dll
+D:\OStore\Engine\Data\OStore.Data\obj\Debug\OStore.Data.pdb

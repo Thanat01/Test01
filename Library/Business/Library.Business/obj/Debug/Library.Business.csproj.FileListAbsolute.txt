@@ -3,3 +3,8 @@ C:\Projects\OnlineStore\Library\Business\Library.Business\bin\Debug\Library.Busi
 C:\Projects\OnlineStore\Library\Business\Library.Business\obj\Debug\Library.Business.csprojResolveAssemblyReference.cache
 C:\Projects\OnlineStore\Library\Business\Library.Business\obj\Debug\Library.Business.dll
 C:\Projects\OnlineStore\Library\Business\Library.Business\obj\Debug\Library.Business.pdb
+D:\OStore\Library\Business\Library.Business\bin\Debug\Library.Business.dll
+D:\OStore\Library\Business\Library.Business\bin\Debug\Library.Business.pdb
+D:\OStore\Library\Business\Library.Business\obj\Debug\Library.Business.csprojResolveAssemblyReference.cache
+D:\OStore\Library\Business\Library.Business\obj\Debug\Library.Business.dll
+D:\OStore\Library\Business\Library.Business\obj\Debug\Library.Business.pdb

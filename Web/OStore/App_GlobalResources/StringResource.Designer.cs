@@ -19,7 +19,7 @@ namespace Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option or rebuild the Visual Studio project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "12.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "14.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class StringResource {
@@ -57,6 +57,87 @@ namespace Resources {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string Delivery_Setup_btnCancel {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_btnCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string Delivery_Setup_btnSave {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_btnSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shipping Cost:.
+        /// </summary>
+        internal static string Delivery_Setup_Cost {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_Cost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name: Alpha.
+        /// </summary>
+        internal static string Delivery_Setup_D1Name {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_D1Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Area: Bangkok, Nonthaburi, Samut Prakan, Pathum Thani.
+        /// </summary>
+        internal static string Delivery_Setup_D1_Info {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_D1_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name: Thaipost.
+        /// </summary>
+        internal static string Delivery_Setup_D2Name {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_D2Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Area: Thailand.
+        /// </summary>
+        internal static string Delivery_Setup_D2_Info {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_D2_Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service day: .
+        /// </summary>
+        internal static string Delivery_Setup_ServiceDay {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_ServiceDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set Up Delivery Channel.
+        /// </summary>
+        internal static string Delivery_Setup_Title {
+            get {
+                return ResourceManager.GetString("Delivery_Setup_Title", resourceCulture);
             }
         }
         
