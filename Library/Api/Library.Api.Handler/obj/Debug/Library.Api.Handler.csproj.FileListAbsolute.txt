@@ -1,0 +1,9 @@
+C:\Projects\OShop\Library\Api\Library.Api.Handler\bin\Debug\Library.Api.Handler.dll
+C:\Projects\OShop\Library\Api\Library.Api.Handler\bin\Debug\Library.Api.Handler.pdb
+C:\Projects\OShop\Library\Api\Library.Api.Handler\obj\Debug\Library.Api.Handler.dll
+C:\Projects\OShop\Library\Api\Library.Api.Handler\obj\Debug\Library.Api.Handler.pdb
+C:\Projects\OnlineStore\Library\Api\Library.Api.Handler\bin\Debug\Library.Api.Handler.dll
+C:\Projects\OnlineStore\Library\Api\Library.Api.Handler\bin\Debug\Library.Api.Handler.pdb
+C:\Projects\OnlineStore\Library\Api\Library.Api.Handler\obj\Debug\Library.Api.Handler.csprojResolveAssemblyReference.cache
+C:\Projects\OnlineStore\Library\Api\Library.Api.Handler\obj\Debug\Library.Api.Handler.dll
+C:\Projects\OnlineStore\Library\Api\Library.Api.Handler\obj\Debug\Library.Api.Handler.pdb

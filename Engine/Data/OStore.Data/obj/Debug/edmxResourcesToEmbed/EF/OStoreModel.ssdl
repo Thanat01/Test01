@@ -1,0 +1,736 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OStoreDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuthorizeExternalSystemUser">
+    <Key>
+      <PropertyRef Name="ExternalSystemId" />
+      <PropertyRef Name="AuthorizeUserId" />
+    </Key>
+    <Property Name="ExternalSystemId" Type="int" Nullable="false" />
+    <Property Name="AuthorizeUserId" Type="int" Nullable="false" />
+    <Property Name="ExternalUserId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Firstname" Type="nvarchar(max)" />
+    <Property Name="Lastname" Type="nvarchar(max)" />
+    <Property Name="Mobile" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AuthorizeGroups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ShopId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Seq" Type="int" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AuthorizeRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ShopId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AuthorizeUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ShopId" Type="int" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Firstname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="255" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AllowsBilling" Type="bit" Nullable="false" />
+    <Property Name="AllowsShipping" Type="bit" Nullable="false" />
+    <Property Name="TwoLetterIsoCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="ThreeLetterIsoCode" Type="nvarchar" MaxLength="3" />
+    <Property Name="NumericIsoCode" Type="int" Nullable="false" />
+    <Property Name="SubjectToVat" Type="bit" Nullable="false" />
+    <Property Name="Published" Type="bit" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="LimitedToStores" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CurrencyCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Rate" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="DisplayLocale" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomFormatting" Type="nvarchar" MaxLength="50" />
+    <Property Name="LimitedToStores" Type="bit" Nullable="false" />
+    <Property Name="Published" Type="bit" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ShopId" Type="int" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CustomerAddress">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+    <Property Name="AddressLine1" Type="nvarchar" MaxLength="255" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="255" />
+    <Property Name="District" Type="nvarchar" MaxLength="100" />
+    <Property Name="Province" Type="nvarchar" MaxLength="100" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="Mobile1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile2" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CustomerOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ShopId" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PromoCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="NetPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CustomerAddressId" Type="int" />
+    <Property Name="OrderStatusId" Type="int" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CustomerOrderDetail">
+    <Key>
+      <PropertyRef Name="CustomerOrderId" />
+      <PropertyRef Name="ProductItemId" />
+    </Key>
+    <Property Name="CustomerOrderId" Type="int" Nullable="false" />
+    <Property Name="ProductItemId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ExternalSystem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="SystemName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="PageURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="IconURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="Seq" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="OrderStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="Seq" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Firstname" Type="nvarchar" MaxLength="100" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShopId" Type="int" Nullable="false" />
+    <Property Name="SKU" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShopId" Type="int" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="PrimaryBoxSeq" Type="int" />
+    <Property Name="SecondaryBoxSeq" Type="int" />
+    <Property Name="Seq" Type="int" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="SKU" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SpecialPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductItemMapVariant">
+    <Key>
+      <PropertyRef Name="ProductItemId" />
+      <PropertyRef Name="ProductVariantId" />
+    </Key>
+    <Property Name="ProductItemId" Type="int" Nullable="false" />
+    <Property Name="ProductVariantId" Type="int" Nullable="false" />
+    <Property Name="Value1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Value2" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductMapCategory">
+    <Key>
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="ProductCategoryId" />
+    </Key>
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="ProductCategoryId" Type="int" Nullable="false" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductVariant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShopId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Shop">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShortName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LongName" Type="nvarchar" MaxLength="255" />
+    <Property Name="DNS" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="TimZoneId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ShopingCard">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ShopingCardMapProductItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="ShopingCardId" Type="int" Nullable="false" />
+    <Property Name="ProductItemId" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TimeZone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="CultureCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="CreateBy" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateBy" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_AuthorizeExternalSystemUser_AuthorizeUser">
+    <End Role="AuthorizeUser" Type="Self.AuthorizeUser" Multiplicity="1" />
+    <End Role="AuthorizeExternalSystemUser" Type="Self.AuthorizeExternalSystemUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorizeUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeExternalSystemUser">
+        <PropertyRef Name="AuthorizeUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeExternalSystemUser_ExternalSystem">
+    <End Role="ExternalSystem" Type="Self.ExternalSystem" Multiplicity="1" />
+    <End Role="AuthorizeExternalSystemUser" Type="Self.AuthorizeExternalSystemUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExternalSystem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeExternalSystemUser">
+        <PropertyRef Name="ExternalSystemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeGroups_Shop">
+    <End Role="Shop" Type="Self.Shop" Multiplicity="0..1" />
+    <End Role="AuthorizeGroups" Type="Self.AuthorizeGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeGroups">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeRole_Shop">
+    <End Role="Shop" Type="Self.Shop" Multiplicity="0..1" />
+    <End Role="AuthorizeRole" Type="Self.AuthorizeRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeRole">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeUser_Shop">
+    <End Role="Shop" Type="Self.Shop" Multiplicity="0..1" />
+    <End Role="AuthorizeUser" Type="Self.AuthorizeUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeUser">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Shop">
+    <End Role="Shop" Type="Self.Shop" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerAddress_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="CustomerAddress" Type="Self.CustomerAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerAddress">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerOrder_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="CustomerOrder" Type="Self.CustomerOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerOrder">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerOrder_CustomerAddress">
+    <End Role="CustomerAddress" Type="Self.CustomerAddress" Multiplicity="0..1" />
+    <End Role="CustomerOrder" Type="Self.CustomerOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerAddress">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerOrder">
+        <PropertyRef Name="CustomerAddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerOrder_Shop">
+    <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+    <End Role="CustomerOrder" Type="Self.CustomerOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerOrder">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategory_ProductCategory1">
+    <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="0..1" />
+    <End Role="ProductCategory1" Type="Self.ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategory1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategory_Shop">
+    <End Role="Shop" Type="Self.Shop" Multiplicity="0..1" />
+    <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategory">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductItem_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ProductItem" Type="Self.ProductItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductItem">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductItemMapVariant_ProductItem">
+    <End Role="ProductItem" Type="Self.ProductItem" Multiplicity="1" />
+    <End Role="ProductItemMapVariant" Type="Self.ProductItemMapVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductItemMapVariant">
+        <PropertyRef Name="ProductItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductItemMapVariant_ProductVariant">
+    <End Role="ProductVariant" Type="Self.ProductVariant" Multiplicity="1" />
+    <End Role="ProductItemMapVariant" Type="Self.ProductItemMapVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductVariant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductItemMapVariant">
+        <PropertyRef Name="ProductVariantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMapCategory_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductMapCategory" Type="Self.ProductMapCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductMapCategory">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMapCategory_ProductCategory">
+    <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="1" />
+    <End Role="ProductMapCategory" Type="Self.ProductMapCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductMapCategory">
+        <PropertyRef Name="ProductCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopingCard_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="ShopingCard" Type="Self.ShopingCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopingCard">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopingCardMapProductItem_ProductItem">
+    <End Role="ProductItem" Type="Self.ProductItem" Multiplicity="1" />
+    <End Role="ShopingCardMapProductItem" Type="Self.ShopingCardMapProductItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopingCardMapProductItem">
+        <PropertyRef Name="ProductItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopingCardMapProductItem_ShopingCard">
+    <End Role="ShopingCard" Type="Self.ShopingCard" Multiplicity="1" />
+    <End Role="ShopingCardMapProductItem" Type="Self.ShopingCardMapProductItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShopingCard">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopingCardMapProductItem">
+        <PropertyRef Name="ShopingCardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Variant_Shop">
+    <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+    <End Role="ProductVariant" Type="Self.ProductVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductVariant">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OStoreDBModelStoreContainer">
+    <EntitySet Name="AuthorizeExternalSystemUser" EntityType="Self.AuthorizeExternalSystemUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuthorizeGroups" EntityType="Self.AuthorizeGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuthorizeRole" EntityType="Self.AuthorizeRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AuthorizeUser" EntityType="Self.AuthorizeUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerAddress" EntityType="Self.CustomerAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerOrder" EntityType="Self.CustomerOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerOrderDetail" EntityType="Self.CustomerOrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExternalSystem" EntityType="Self.ExternalSystem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductItem" EntityType="Self.ProductItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductItemMapVariant" EntityType="Self.ProductItemMapVariant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductMapCategory" EntityType="Self.ProductMapCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductVariant" EntityType="Self.ProductVariant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shop" EntityType="Self.Shop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShopingCard" EntityType="Self.ShopingCard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShopingCardMapProductItem" EntityType="Self.ShopingCardMapProductItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TimeZone" EntityType="Self.TimeZone" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AuthorizeExternalSystemUser_AuthorizeUser" Association="Self.FK_AuthorizeExternalSystemUser_AuthorizeUser">
+      <End Role="AuthorizeUser" EntitySet="AuthorizeUser" />
+      <End Role="AuthorizeExternalSystemUser" EntitySet="AuthorizeExternalSystemUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeExternalSystemUser_ExternalSystem" Association="Self.FK_AuthorizeExternalSystemUser_ExternalSystem">
+      <End Role="ExternalSystem" EntitySet="ExternalSystem" />
+      <End Role="AuthorizeExternalSystemUser" EntitySet="AuthorizeExternalSystemUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeGroups_Shop" Association="Self.FK_AuthorizeGroups_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="AuthorizeGroups" EntitySet="AuthorizeGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeRole_Shop" Association="Self.FK_AuthorizeRole_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="AuthorizeRole" EntitySet="AuthorizeRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeUser_Shop" Association="Self.FK_AuthorizeUser_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="AuthorizeUser" EntitySet="AuthorizeUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Shop" Association="Self.FK_Customer_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerAddress_Customer" Association="Self.FK_CustomerAddress_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="CustomerAddress" EntitySet="CustomerAddress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerOrder_Customer" Association="Self.FK_CustomerOrder_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="CustomerOrder" EntitySet="CustomerOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerOrder_CustomerAddress" Association="Self.FK_CustomerOrder_CustomerAddress">
+      <End Role="CustomerAddress" EntitySet="CustomerAddress" />
+      <End Role="CustomerOrder" EntitySet="CustomerOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerOrder_Shop" Association="Self.FK_CustomerOrder_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="CustomerOrder" EntitySet="CustomerOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategory_ProductCategory1" Association="Self.FK_ProductCategory_ProductCategory1">
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+      <End Role="ProductCategory1" EntitySet="ProductCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategory_Shop" Association="Self.FK_ProductCategory_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductItem_Product" Association="Self.FK_ProductItem_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductItem" EntitySet="ProductItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductItemMapVariant_ProductItem" Association="Self.FK_ProductItemMapVariant_ProductItem">
+      <End Role="ProductItem" EntitySet="ProductItem" />
+      <End Role="ProductItemMapVariant" EntitySet="ProductItemMapVariant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductItemMapVariant_ProductVariant" Association="Self.FK_ProductItemMapVariant_ProductVariant">
+      <End Role="ProductVariant" EntitySet="ProductVariant" />
+      <End Role="ProductItemMapVariant" EntitySet="ProductItemMapVariant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMapCategory_Product" Association="Self.FK_ProductMapCategory_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductMapCategory" EntitySet="ProductMapCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMapCategory_ProductCategory" Association="Self.FK_ProductMapCategory_ProductCategory">
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+      <End Role="ProductMapCategory" EntitySet="ProductMapCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopingCard_Customer" Association="Self.FK_ShopingCard_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="ShopingCard" EntitySet="ShopingCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopingCardMapProductItem_ProductItem" Association="Self.FK_ShopingCardMapProductItem_ProductItem">
+      <End Role="ProductItem" EntitySet="ProductItem" />
+      <End Role="ShopingCardMapProductItem" EntitySet="ShopingCardMapProductItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopingCardMapProductItem_ShopingCard" Association="Self.FK_ShopingCardMapProductItem_ShopingCard">
+      <End Role="ShopingCard" EntitySet="ShopingCard" />
+      <End Role="ShopingCardMapProductItem" EntitySet="ShopingCardMapProductItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Variant_Shop" Association="Self.FK_Variant_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ProductVariant" EntitySet="ProductVariant" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

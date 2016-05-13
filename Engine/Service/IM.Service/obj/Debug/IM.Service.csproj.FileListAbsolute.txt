@@ -1,0 +1,17 @@
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\IM.Service.dll
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\IM.Service.pdb
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\IM.Business.dll
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\Library.Business.dll
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\OStore.Model.dll
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\AutoMapper.dll
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\OStore.Data.dll
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\EntityFramework.dll
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\Library.Business.pdb
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\IM.Business.pdb
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\OStore.Model.pdb
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\AutoMapper.xml
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\OStore.Data.pdb
+C:\Projects\OnlineStore\Engine\Service\IM.Service\bin\Debug\EntityFramework.xml
+C:\Projects\OnlineStore\Engine\Service\IM.Service\obj\Debug\IM.Service.csprojResolveAssemblyReference.cache
+C:\Projects\OnlineStore\Engine\Service\IM.Service\obj\Debug\IM.Service.dll
+C:\Projects\OnlineStore\Engine\Service\IM.Service\obj\Debug\IM.Service.pdb

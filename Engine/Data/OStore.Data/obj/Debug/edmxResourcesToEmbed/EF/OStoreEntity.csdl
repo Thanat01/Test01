@@ -1,0 +1,1924 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OStoreDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="OStoreDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AddressTypes" EntityType="OStoreDBModel.AddressType" />
+    <EntitySet Name="AuthorizeExternalSystemUsers" EntityType="OStoreDBModel.AuthorizeExternalSystemUser" />
+    <EntitySet Name="AuthorizeGroups" EntityType="OStoreDBModel.AuthorizeGroup" />
+    <EntitySet Name="AuthorizeGroupMapRoles" EntityType="OStoreDBModel.AuthorizeGroupMapRole" />
+    <EntitySet Name="AuthorizeRoles" EntityType="OStoreDBModel.AuthorizeRole" />
+    <EntitySet Name="AuthorizeRoleMapMenus" EntityType="OStoreDBModel.AuthorizeRoleMapMenu" />
+    <EntitySet Name="AuthorizeUsers" EntityType="OStoreDBModel.AuthorizeUser" />
+    <EntitySet Name="AuthorizeUserMapGroups" EntityType="OStoreDBModel.AuthorizeUserMapGroup" />
+    <EntitySet Name="Banks" EntityType="OStoreDBModel.Bank" />
+    <EntitySet Name="Countries" EntityType="OStoreDBModel.Country" />
+    <EntitySet Name="Currencies" EntityType="OStoreDBModel.Currency" />
+    <EntitySet Name="Districts" EntityType="OStoreDBModel.District" />
+    <EntitySet Name="ExternalSystems" EntityType="OStoreDBModel.ExternalSystem" />
+    <EntitySet Name="Menus" EntityType="OStoreDBModel.Menu" />
+    <EntitySet Name="OrderStatus" EntityType="OStoreDBModel.OrderStatu" />
+    <EntitySet Name="PaymentChannels" EntityType="OStoreDBModel.PaymentChannel" />
+    <EntitySet Name="People" EntityType="OStoreDBModel.Person" />
+    <EntitySet Name="PersonAddresses" EntityType="OStoreDBModel.PersonAddress" />
+    <EntitySet Name="PersonMapTypes" EntityType="OStoreDBModel.PersonMapType" />
+    <EntitySet Name="PersonOrders" EntityType="OStoreDBModel.PersonOrder" />
+    <EntitySet Name="PersonOrderDetails" EntityType="OStoreDBModel.PersonOrderDetail" />
+    <EntitySet Name="PersonTypes" EntityType="OStoreDBModel.PersonType" />
+    <EntitySet Name="PostalCodes" EntityType="OStoreDBModel.PostalCode" />
+    <EntitySet Name="Products" EntityType="OStoreDBModel.Product" />
+    <EntitySet Name="ProductCategories" EntityType="OStoreDBModel.ProductCategory" />
+    <EntitySet Name="ProductImages" EntityType="OStoreDBModel.ProductImage" />
+    <EntitySet Name="ProductItems" EntityType="OStoreDBModel.ProductItem" />
+    <EntitySet Name="ProductItemMapVariants" EntityType="OStoreDBModel.ProductItemMapVariant" />
+    <EntitySet Name="ProductMapCategories" EntityType="OStoreDBModel.ProductMapCategory" />
+    <EntitySet Name="ProductMapProducts" EntityType="OStoreDBModel.ProductMapProduct" />
+    <EntitySet Name="ProductMapVariants" EntityType="OStoreDBModel.ProductMapVariant" />
+    <EntitySet Name="ProductMapVariantDetails" EntityType="OStoreDBModel.ProductMapVariantDetail" />
+    <EntitySet Name="ProductRelationTypes" EntityType="OStoreDBModel.ProductRelationType" />
+    <EntitySet Name="ProductReviews" EntityType="OStoreDBModel.ProductReview" />
+    <EntitySet Name="ProductVariants" EntityType="OStoreDBModel.ProductVariant" />
+    <EntitySet Name="ProductVariantDetails" EntityType="OStoreDBModel.ProductVariantDetail" />
+    <EntitySet Name="Promotions" EntityType="OStoreDBModel.Promotion" />
+    <EntitySet Name="PromotionMapCategories" EntityType="OStoreDBModel.PromotionMapCategory" />
+    <EntitySet Name="PromotionMapProducts" EntityType="OStoreDBModel.PromotionMapProduct" />
+    <EntitySet Name="Provinces" EntityType="OStoreDBModel.Province" />
+    <EntitySet Name="ReviewStatus" EntityType="OStoreDBModel.ReviewStatu" />
+    <EntitySet Name="SaleChannels" EntityType="OStoreDBModel.SaleChannel" />
+    <EntitySet Name="Shops" EntityType="OStoreDBModel.Shop" />
+    <EntitySet Name="ShopingCards" EntityType="OStoreDBModel.ShopingCard" />
+    <EntitySet Name="ShopingCardDetails" EntityType="OStoreDBModel.ShopingCardDetail" />
+    <EntitySet Name="ShopMapPaymentChannels" EntityType="OStoreDBModel.ShopMapPaymentChannel" />
+    <EntitySet Name="ShopPaymentAccounts" EntityType="OStoreDBModel.ShopPaymentAccount" />
+    <EntitySet Name="SubDistricts" EntityType="OStoreDBModel.SubDistrict" />
+    <EntitySet Name="TimeZones" EntityType="OStoreDBModel.TimeZone" />
+    <AssociationSet Name="FK_PersonAddress_AddressType" Association="OStoreDBModel.FK_PersonAddress_AddressType">
+      <End Role="AddressType" EntitySet="AddressTypes" />
+      <End Role="PersonAddress" EntitySet="PersonAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeExternalSystemUser_AuthorizeUser" Association="OStoreDBModel.FK_AuthorizeExternalSystemUser_AuthorizeUser">
+      <End Role="AuthorizeUser" EntitySet="AuthorizeUsers" />
+      <End Role="AuthorizeExternalSystemUser" EntitySet="AuthorizeExternalSystemUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeExternalSystemUser_ExternalSystem" Association="OStoreDBModel.FK_AuthorizeExternalSystemUser_ExternalSystem">
+      <End Role="ExternalSystem" EntitySet="ExternalSystems" />
+      <End Role="AuthorizeExternalSystemUser" EntitySet="AuthorizeExternalSystemUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeGroup_Shop" Association="OStoreDBModel.FK_AuthorizeGroup_Shop">
+      <End Role="Shop" EntitySet="Shops" />
+      <End Role="AuthorizeGroup" EntitySet="AuthorizeGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeGroupMapRole_AuthorizeGroup" Association="OStoreDBModel.FK_AuthorizeGroupMapRole_AuthorizeGroup">
+      <End Role="AuthorizeGroup" EntitySet="AuthorizeGroups" />
+      <End Role="AuthorizeGroupMapRole" EntitySet="AuthorizeGroupMapRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeUserMapGroup_AuthorizeGroup" Association="OStoreDBModel.FK_AuthorizeUserMapGroup_AuthorizeGroup">
+      <End Role="AuthorizeGroup" EntitySet="AuthorizeGroups" />
+      <End Role="AuthorizeUserMapGroup" EntitySet="AuthorizeUserMapGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeGroupMapRole_AuthorizeRole" Association="OStoreDBModel.FK_AuthorizeGroupMapRole_AuthorizeRole">
+      <End Role="AuthorizeRole" EntitySet="AuthorizeRoles" />
+      <End Role="AuthorizeGroupMapRole" EntitySet="AuthorizeGroupMapRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeRole_Shop" Association="OStoreDBModel.FK_AuthorizeRole_Shop">
+      <End Role="Shop" EntitySet="Shops" />
+      <End Role="AuthorizeRole" EntitySet="AuthorizeRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeRoleMapMenu_AuthorizeRole" Association="OStoreDBModel.FK_AuthorizeRoleMapMenu_AuthorizeRole">
+      <End Role="AuthorizeRole" EntitySet="AuthorizeRoles" />
+      <End Role="AuthorizeRoleMapMenu" EntitySet="AuthorizeRoleMapMenus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeRoleMapMenu_Menu" Association="OStoreDBModel.FK_AuthorizeRoleMapMenu_Menu">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="AuthorizeRoleMapMenu" EntitySet="AuthorizeRoleMapMenus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeUser_Person" Association="OStoreDBModel.FK_AuthorizeUser_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="AuthorizeUser" EntitySet="AuthorizeUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeUser_Shop" Association="OStoreDBModel.FK_AuthorizeUser_Shop">
+      <End Role="Shop" EntitySet="Shops" />
+      <End Role="AuthorizeUser" EntitySet="AuthorizeUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuthorizeUserMapGroup_AuthorizeUser" Association="OStoreDBModel.FK_AuthorizeUserMapGroup_AuthorizeUser">
+      <End Role="AuthorizeUser" EntitySet="AuthorizeUsers" />
+      <End Role="AuthorizeUserMapGroup" EntitySet="AuthorizeUserMapGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopPaymentAccount_Bank" Association="OStoreDBModel.FK_ShopPaymentAccount_Bank">
+      <End Role="Bank" EntitySet="Banks" />
+      <End Role="ShopPaymentAccount" EntitySet="ShopPaymentAccounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Province_Country" Association="OStoreDBModel.FK_Province_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Province" EntitySet="Provinces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_District_Province" Association="OStoreDBModel.FK_District_Province">
+      <End Role="Province" EntitySet="Provinces" />
+      <End Role="District" EntitySet="Districts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubDistrict_District" Association="OStoreDBModel.FK_SubDistrict_District">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="SubDistrict" EntitySet="SubDistricts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopMapPaymentChannel_PaymentChannel1" Association="OStoreDBModel.FK_ShopMapPaymentChannel_PaymentChannel1">
+      <End Role="PaymentChannel" EntitySet="PaymentChannels" />
+      <End Role="ShopMapPaymentChannel" EntitySet="ShopMapPaymentChannels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_Shop" Association="OStoreDBModel.FK_Person_Shop">
+      <End Role="Shop" EntitySet="Shops" />
+      <End Role="Person" EntitySet="People" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonAddress_Person" Association="OStoreDBModel.FK_PersonAddress_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="PersonAddress" EntitySet="PersonAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonMapType_Person" Association="OStoreDBModel.FK_PersonMapType_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="PersonMapType" EntitySet="PersonMapTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonOrder_Person" Association="OStoreDBModel.FK_PersonOrder_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="PersonOrder" EntitySet="PersonOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopingCard_Person" Association="OStoreDBModel.FK_ShopingCard_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="ShopingCard" EntitySet="ShopingCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonAddress_PostalCode" Association="OStoreDBModel.FK_PersonAddress_PostalCode">
+      <End Role="PostalCode" EntitySet="PostalCodes" />
+      <End Role="PersonAddress" EntitySet="PersonAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonOrder_PersonAddress" Association="OStoreDBModel.FK_PersonOrder_PersonAddress">
+      <End Role="PersonAddress" EntitySet="PersonAddresses" />
+      <End Role="PersonOrder" EntitySet="PersonOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonOrder_PersonAddress1" Association="OStoreDBModel.FK_PersonOrder_PersonAddress1">
+      <End Role="PersonAddress" EntitySet="PersonAddresses" />
+      <End Role="PersonOrder" EntitySet="PersonOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonMapType_PersonType" Association="OStoreDBModel.FK_PersonMapType_PersonType">
+      <End Role="PersonType" EntitySet="PersonTypes" />
+      <End Role="PersonMapType" EntitySet="PersonMapTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonOrder_Promotion" Association="OStoreDBModel.FK_PersonOrder_Promotion">
+      <End Role="Promotion" EntitySet="Promotions" />
+      <End Role="PersonOrder" EntitySet="PersonOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonOrder_SaleChannel" Association="OStoreDBModel.FK_PersonOrder_SaleChannel">
+      <End Role="SaleChannel" EntitySet="SaleChannels" />
+      <End Role="PersonOrder" EntitySet="PersonOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonOrder_Shop" Association="OStoreDBModel.FK_PersonOrder_Shop">
+      <End Role="Shop" EntitySet="Shops" />
+      <End Role="PersonOrder" EntitySet="PersonOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonOrderDetail_PersonOrder" Association="OStoreDBModel.FK_PersonOrderDetail_PersonOrder">
+      <End Role="PersonOrder" EntitySet="PersonOrders" />
+      <End Role="PersonOrderDetail" EntitySet="PersonOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonOrderDetail_ProductItem" Association="OStoreDBModel.FK_PersonOrderDetail_ProductItem">
+      <End Role="ProductItem" EntitySet="ProductItems" />
+      <End Role="PersonOrderDetail" EntitySet="PersonOrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PostalCode_SubDistrict" Association="OStoreDBModel.FK_PostalCode_SubDistrict">
+      <End Role="SubDistrict" EntitySet="SubDistricts" />
+      <End Role="PostalCode" EntitySet="PostalCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductImage_Product" Association="OStoreDBModel.FK_ProductImage_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductImage" EntitySet="ProductImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductItem_Product" Association="OStoreDBModel.FK_ProductItem_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductItem" EntitySet="ProductItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMapCategory_Product" Association="OStoreDBModel.FK_ProductMapCategory_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductMapCategory" EntitySet="ProductMapCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMapProduct_Product1" Association="OStoreDBModel.FK_ProductMapProduct_Product1">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductMapProduct" EntitySet="ProductMapProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMapVariant_Product" Association="OStoreDBModel.FK_ProductMapVariant_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductMapVariant" EntitySet="ProductMapVariants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductReview_Product" Association="OStoreDBModel.FK_ProductReview_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductReview" EntitySet="ProductReviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PromotionMapProduct_Product" Association="OStoreDBModel.FK_PromotionMapProduct_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="PromotionMapProduct" EntitySet="PromotionMapProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategory_ProductCategory1" Association="OStoreDBModel.FK_ProductCategory_ProductCategory1">
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+      <End Role="ProductCategory1" EntitySet="ProductCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductCategory_Shop" Association="OStoreDBModel.FK_ProductCategory_Shop">
+      <End Role="Shop" EntitySet="Shops" />
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMapCategory_ProductCategory" Association="OStoreDBModel.FK_ProductMapCategory_ProductCategory">
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+      <End Role="ProductMapCategory" EntitySet="ProductMapCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PromotionMapCategory_ProductCategory" Association="OStoreDBModel.FK_PromotionMapCategory_ProductCategory">
+      <End Role="ProductCategory" EntitySet="ProductCategories" />
+      <End Role="PromotionMapCategory" EntitySet="PromotionMapCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductItemMapVariant_ProductItem" Association="OStoreDBModel.FK_ProductItemMapVariant_ProductItem">
+      <End Role="ProductItem" EntitySet="ProductItems" />
+      <End Role="ProductItemMapVariant" EntitySet="ProductItemMapVariants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopingCardDetail_ProductItem" Association="OStoreDBModel.FK_ShopingCardDetail_ProductItem">
+      <End Role="ProductItem" EntitySet="ProductItems" />
+      <End Role="ShopingCardDetail" EntitySet="ShopingCardDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductItemMapVariant_ProductVariant" Association="OStoreDBModel.FK_ProductItemMapVariant_ProductVariant">
+      <End Role="ProductVariant" EntitySet="ProductVariants" />
+      <End Role="ProductItemMapVariant" EntitySet="ProductItemMapVariants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMapProduct_Product" Association="OStoreDBModel.FK_ProductMapProduct_Product">
+      <End Role="ProductRelationType" EntitySet="ProductRelationTypes" />
+      <End Role="ProductMapProduct" EntitySet="ProductMapProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMapProduct_Shop" Association="OStoreDBModel.FK_ProductMapProduct_Shop">
+      <End Role="Shop" EntitySet="Shops" />
+      <End Role="ProductMapProduct" EntitySet="ProductMapProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMapVariantDetail_ProductMapVariant" Association="OStoreDBModel.FK_ProductMapVariantDetail_ProductMapVariant">
+      <End Role="ProductMapVariant" EntitySet="ProductMapVariants" />
+      <End Role="ProductMapVariantDetail" EntitySet="ProductMapVariantDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductMapVariantDetail_ProductVariantDetail" Association="OStoreDBModel.FK_ProductMapVariantDetail_ProductVariantDetail">
+      <End Role="ProductVariantDetail" EntitySet="ProductVariantDetails" />
+      <End Role="ProductMapVariantDetail" EntitySet="ProductMapVariantDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductVariantDetail_ProductVariant" Association="OStoreDBModel.FK_ProductVariantDetail_ProductVariant">
+      <End Role="ProductVariant" EntitySet="ProductVariants" />
+      <End Role="ProductVariantDetail" EntitySet="ProductVariantDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Variant_Shop" Association="OStoreDBModel.FK_Variant_Shop">
+      <End Role="Shop" EntitySet="Shops" />
+      <End Role="ProductVariant" EntitySet="ProductVariants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Promotion_Shop" Association="OStoreDBModel.FK_Promotion_Shop">
+      <End Role="Shop" EntitySet="Shops" />
+      <End Role="Promotion" EntitySet="Promotions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PromotionMapCategory_Promotion" Association="OStoreDBModel.FK_PromotionMapCategory_Promotion">
+      <End Role="Promotion" EntitySet="Promotions" />
+      <End Role="PromotionMapCategory" EntitySet="PromotionMapCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PromotionMapProduct_Promotion" Association="OStoreDBModel.FK_PromotionMapProduct_Promotion">
+      <End Role="Promotion" EntitySet="Promotions" />
+      <End Role="PromotionMapProduct" EntitySet="PromotionMapProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleChannel_Shop" Association="OStoreDBModel.FK_SaleChannel_Shop">
+      <End Role="Shop" EntitySet="Shops" />
+      <End Role="SaleChannel" EntitySet="SaleChannels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopingCard_Shop" Association="OStoreDBModel.FK_ShopingCard_Shop">
+      <End Role="Shop" EntitySet="Shops" />
+      <End Role="ShopingCard" EntitySet="ShopingCards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopMapPaymentChannel_Shop" Association="OStoreDBModel.FK_ShopMapPaymentChannel_Shop">
+      <End Role="Shop" EntitySet="Shops" />
+      <End Role="ShopMapPaymentChannel" EntitySet="ShopMapPaymentChannels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopingCardDetail_ShopingCard" Association="OStoreDBModel.FK_ShopingCardDetail_ShopingCard">
+      <End Role="ShopingCard" EntitySet="ShopingCards" />
+      <End Role="ShopingCardDetail" EntitySet="ShopingCardDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopPaymentAccount_ShopMapPaymentChannel" Association="OStoreDBModel.FK_ShopPaymentAccount_ShopMapPaymentChannel">
+      <End Role="ShopMapPaymentChannel" EntitySet="ShopMapPaymentChannels" />
+      <End Role="ShopPaymentAccount" EntitySet="ShopPaymentAccounts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AddressType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PersonAddresses" Relationship="OStoreDBModel.FK_PersonAddress_AddressType" FromRole="AddressType" ToRole="PersonAddress" />
+  </EntityType>
+  <EntityType Name="AuthorizeExternalSystemUser">
+    <Key>
+      <PropertyRef Name="ExternalSystemId" />
+      <PropertyRef Name="AuthorizeUserId" />
+    </Key>
+    <Property Name="ExternalSystemId" Type="Int32" Nullable="false" />
+    <Property Name="AuthorizeUserId" Type="Int32" Nullable="false" />
+    <Property Name="ExternalUserId" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Firstname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AuthorizeUser" Relationship="OStoreDBModel.FK_AuthorizeExternalSystemUser_AuthorizeUser" FromRole="AuthorizeExternalSystemUser" ToRole="AuthorizeUser" />
+    <NavigationProperty Name="ExternalSystem" Relationship="OStoreDBModel.FK_AuthorizeExternalSystemUser_ExternalSystem" FromRole="AuthorizeExternalSystemUser" ToRole="ExternalSystem" />
+  </EntityType>
+  <EntityType Name="AuthorizeGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Seq" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_AuthorizeGroup_Shop" FromRole="AuthorizeGroup" ToRole="Shop" />
+    <NavigationProperty Name="AuthorizeGroupMapRoles" Relationship="OStoreDBModel.FK_AuthorizeGroupMapRole_AuthorizeGroup" FromRole="AuthorizeGroup" ToRole="AuthorizeGroupMapRole" />
+    <NavigationProperty Name="AuthorizeUserMapGroups" Relationship="OStoreDBModel.FK_AuthorizeUserMapGroup_AuthorizeGroup" FromRole="AuthorizeGroup" ToRole="AuthorizeUserMapGroup" />
+  </EntityType>
+  <EntityType Name="AuthorizeGroupMapRole">
+    <Key>
+      <PropertyRef Name="AuthorizeGroupId" />
+      <PropertyRef Name="AuthorizeRoleId" />
+    </Key>
+    <Property Name="AuthorizeGroupId" Type="Int32" Nullable="false" />
+    <Property Name="AuthorizeRoleId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AuthorizeGroup" Relationship="OStoreDBModel.FK_AuthorizeGroupMapRole_AuthorizeGroup" FromRole="AuthorizeGroupMapRole" ToRole="AuthorizeGroup" />
+    <NavigationProperty Name="AuthorizeRole" Relationship="OStoreDBModel.FK_AuthorizeGroupMapRole_AuthorizeRole" FromRole="AuthorizeGroupMapRole" ToRole="AuthorizeRole" />
+  </EntityType>
+  <EntityType Name="AuthorizeRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AuthorizeGroupMapRoles" Relationship="OStoreDBModel.FK_AuthorizeGroupMapRole_AuthorizeRole" FromRole="AuthorizeRole" ToRole="AuthorizeGroupMapRole" />
+    <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_AuthorizeRole_Shop" FromRole="AuthorizeRole" ToRole="Shop" />
+    <NavigationProperty Name="AuthorizeRoleMapMenus" Relationship="OStoreDBModel.FK_AuthorizeRoleMapMenu_AuthorizeRole" FromRole="AuthorizeRole" ToRole="AuthorizeRoleMapMenu" />
+  </EntityType>
+  <EntityType Name="AuthorizeRoleMapMenu">
+    <Key>
+      <PropertyRef Name="AuthorizeRoleId" />
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="AuthorizeRoleId" Type="Int32" Nullable="false" />
+    <Property Name="MenuId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AuthorizeRole" Relationship="OStoreDBModel.FK_AuthorizeRoleMapMenu_AuthorizeRole" FromRole="AuthorizeRoleMapMenu" ToRole="AuthorizeRole" />
+    <NavigationProperty Name="Menu" Relationship="OStoreDBModel.FK_AuthorizeRoleMapMenu_Menu" FromRole="AuthorizeRoleMapMenu" ToRole="Menu" />
+  </EntityType>
+  <EntityType Name="AuthorizeUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="PersonId" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Firstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AuthorizeExternalSystemUsers" Relationship="OStoreDBModel.FK_AuthorizeExternalSystemUser_AuthorizeUser" FromRole="AuthorizeUser" ToRole="AuthorizeExternalSystemUser" />
+    <NavigationProperty Name="Person" Relationship="OStoreDBModel.FK_AuthorizeUser_Person" FromRole="AuthorizeUser" ToRole="Person" />
+    <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_AuthorizeUser_Shop" FromRole="AuthorizeUser" ToRole="Shop" />
+    <NavigationProperty Name="AuthorizeUserMapGroups" Relationship="OStoreDBModel.FK_AuthorizeUserMapGroup_AuthorizeUser" FromRole="AuthorizeUser" ToRole="AuthorizeUserMapGroup" />
+  </EntityType>
+  <EntityType Name="AuthorizeUserMapGroup">
+    <Key>
+      <PropertyRef Name="AuthorizeUserId" />
+      <PropertyRef Name="AuthorizeGroupId" />
+    </Key>
+    <Property Name="AuthorizeUserId" Type="Int32" Nullable="false" />
+    <Property Name="AuthorizeGroupId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AuthorizeGroup" Relationship="OStoreDBModel.FK_AuthorizeUserMapGroup_AuthorizeGroup" FromRole="AuthorizeUserMapGroup" ToRole="AuthorizeGroup" />
+    <NavigationProperty Name="AuthorizeUser" Relationship="OStoreDBModel.FK_AuthorizeUserMapGroup_AuthorizeUser" FromRole="AuthorizeUserMapGroup" ToRole="AuthorizeUser" />
+  </EntityType>
+  <EntityType Name="Bank">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Logo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ShopPaymentAccounts" Relationship="OStoreDBModel.FK_ShopPaymentAccount_Bank" FromRole="Bank" ToRole="ShopPaymentAccount" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AllowsBilling" Type="Boolean" Nullable="false" />
+    <Property Name="AllowsShipping" Type="Boolean" Nullable="false" />
+    <Property Name="TwoLetterIsoCode" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ThreeLetterIsoCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="NumericIsoCode" Type="Int32" Nullable="false" />
+    <Property Name="SubjectToVat" Type="Boolean" Nullable="false" />
+    <Property Name="Published" Type="Boolean" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="LimitedToStores" Type="Boolean" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Provinces" Relationship="OStoreDBModel.FK_Province_Country" FromRole="Country" ToRole="Province" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CurrencyCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Rate" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+    <Property Name="DisplayLocale" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomFormatting" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LimitedToStores" Type="Boolean" Nullable="false" />
+    <Property Name="Published" Type="Boolean" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ProvinceId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Province" Relationship="OStoreDBModel.FK_District_Province" FromRole="District" ToRole="Province" />
+    <NavigationProperty Name="SubDistricts" Relationship="OStoreDBModel.FK_SubDistrict_District" FromRole="District" ToRole="SubDistrict" />
+  </EntityType>
+  <EntityType Name="ExternalSystem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SystemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AuthorizeExternalSystemUsers" Relationship="OStoreDBModel.FK_AuthorizeExternalSystemUser_ExternalSystem" FromRole="ExternalSystem" ToRole="AuthorizeExternalSystemUser" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Controller" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IconURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Seq" Type="Int32" />
+    <Property Name="ParentId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AuthorizeRoleMapMenus" Relationship="OStoreDBModel.FK_AuthorizeRoleMapMenu_Menu" FromRole="Menu" ToRole="AuthorizeRoleMapMenu" />
+  </EntityType>
+  <EntityType Name="OrderStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Seq" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PaymentChannel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Seq" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ShopMapPaymentChannels" Relationship="OStoreDBModel.FK_ShopMapPaymentChannel_PaymentChannel1" FromRole="PaymentChannel" ToRole="ShopMapPaymentChannel" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" />
+    <Property Name="Firstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AuthorizeUsers" Relationship="OStoreDBModel.FK_AuthorizeUser_Person" FromRole="Person" ToRole="AuthorizeUser" />
+    <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_Person_Shop" FromRole="Person" ToRole="Shop" />
+    <NavigationProperty Name="PersonAddresses" Relationship="OStoreDBModel.FK_PersonAddress_Person" FromRole="Person" ToRole="PersonAddress" />
+    <NavigationProperty Name="PersonMapTypes" Relationship="OStoreDBModel.FK_PersonMapType_Person" FromRole="Person" ToRole="PersonMapType" />
+    <NavigationProperty Name="PersonOrders" Relationship="OStoreDBModel.FK_PersonOrder_Person" FromRole="Person" ToRole="PersonOrder" />
+    <NavigationProperty Name="ShopingCards" Relationship="OStoreDBModel.FK_ShopingCard_Person" FromRole="Person" ToRole="ShopingCard" />
+  </EntityType>
+  <EntityType Name="PersonAddress">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonId" Type="Int32" Nullable="false" />
+    <Property Name="AddressTypeId" Type="Int32" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLine1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLine2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ProvinceId" Type="Int32" />
+    <Property Name="DistrictId" Type="Int32" />
+    <Property Name="SubDistrictId" Type="Int32" />
+    <Property Name="PostalCodeId" Type="Int32" />
+    <Property Name="Mobile1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AddressType" Relationship="OStoreDBModel.FK_PersonAddress_AddressType" FromRole="PersonAddress" ToRole="AddressType" />
+    <NavigationProperty Name="Person" Relationship="OStoreDBModel.FK_PersonAddress_Person" FromRole="PersonAddress" ToRole="Person" />
+    <NavigationProperty Name="PostalCode" Relationship="OStoreDBModel.FK_PersonAddress_PostalCode" FromRole="PersonAddress" ToRole="PostalCode" />
+    <NavigationProperty Name="PersonOrders" Relationship="OStoreDBModel.FK_PersonOrder_PersonAddress" FromRole="PersonAddress" ToRole="PersonOrder" />
+    <NavigationProperty Name="PersonOrders1" Relationship="OStoreDBModel.FK_PersonOrder_PersonAddress1" FromRole="PersonAddress" ToRole="PersonOrder" />
+  </EntityType>
+  <EntityType Name="PersonMapType">
+    <Key>
+      <PropertyRef Name="PersonId" />
+      <PropertyRef Name="PersonTypeId" />
+    </Key>
+    <Property Name="PersonId" Type="Int32" Nullable="false" />
+    <Property Name="PersonTypeId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Person" Relationship="OStoreDBModel.FK_PersonMapType_Person" FromRole="PersonMapType" ToRole="Person" />
+    <NavigationProperty Name="PersonType" Relationship="OStoreDBModel.FK_PersonMapType_PersonType" FromRole="PersonMapType" ToRole="PersonType" />
+  </EntityType>
+  <EntityType Name="PersonOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="PersonId" Type="Int32" Nullable="false" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PromotionId" Type="Int32" />
+    <Property Name="NetPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ShippingAddressId" Type="Int32" />
+    <Property Name="BillingAddressId" Type="Int32" />
+    <Property Name="SaleChannelId" Type="Int32" />
+    <Property Name="OrderStatusId" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Person" Relationship="OStoreDBModel.FK_PersonOrder_Person" FromRole="PersonOrder" ToRole="Person" />
+    <NavigationProperty Name="PersonAddress" Relationship="OStoreDBModel.FK_PersonOrder_PersonAddress" FromRole="PersonOrder" ToRole="PersonAddress" />
+    <NavigationProperty Name="PersonAddress1" Relationship="OStoreDBModel.FK_PersonOrder_PersonAddress1" FromRole="PersonOrder" ToRole="PersonAddress" />
+    <NavigationProperty Name="Promotion" Relationship="OStoreDBModel.FK_PersonOrder_Promotion" FromRole="PersonOrder" ToRole="Promotion" />
+    <NavigationProperty Name="SaleChannel" Relationship="OStoreDBModel.FK_PersonOrder_SaleChannel" FromRole="PersonOrder" ToRole="SaleChannel" />
+    <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_PersonOrder_Shop" FromRole="PersonOrder" ToRole="Shop" />
+    <NavigationProperty Name="PersonOrderDetails" Relationship="OStoreDBModel.FK_PersonOrderDetail_PersonOrder" FromRole="PersonOrder" ToRole="PersonOrderDetail" />
+  </EntityType>
+  <EntityType Name="PersonOrderDetail">
+    <Key>
+      <PropertyRef Name="PersonOrderId" />
+      <PropertyRef Name="ProductItemId" />
+    </Key>
+    <Property Name="PersonOrderId" Type="Int32" Nullable="false" />
+    <Property Name="ProductItemId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PersonOrder" Relationship="OStoreDBModel.FK_PersonOrderDetail_PersonOrder" FromRole="PersonOrderDetail" ToRole="PersonOrder" />
+    <NavigationProperty Name="ProductItem" Relationship="OStoreDBModel.FK_PersonOrderDetail_ProductItem" FromRole="PersonOrderDetail" ToRole="ProductItem" />
+  </EntityType>
+  <EntityType Name="PersonType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PersonMapTypes" Relationship="OStoreDBModel.FK_PersonMapType_PersonType" FromRole="PersonType" ToRole="PersonMapType" />
+  </EntityType>
+  <EntityType Name="PostalCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SubDistrictId" Type="Int32" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PersonAddresses" Relationship="OStoreDBModel.FK_PersonAddress_PostalCode" FromRole="PostalCode" ToRole="PersonAddress" />
+    <NavigationProperty Name="SubDistrict" Relationship="OStoreDBModel.FK_PostalCode_SubDistrict" FromRole="PostalCode" ToRole="SubDistrict" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MFSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UNSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PrepareDate" Type="Int32" />
+    <Property Name="ShowWhenOutStock" Type="Boolean" />
+    <Property Name="ReOrderPoint" Type="Int32" />
+    <Property Name="Seq" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProductImages" Relationship="OStoreDBModel.FK_ProductImage_Product" FromRole="Product" ToRole="ProductImage" />
+    <NavigationProperty Name="ProductItems" Relationship="OStoreDBModel.FK_ProductItem_Product" FromRole="Product" ToRole="ProductItem" />
+    <NavigationProperty Name="ProductMapCategories" Relationship="OStoreDBModel.FK_ProductMapCategory_Product" FromRole="Product" ToRole="ProductMapCategory" />
+    <NavigationProperty Name="ProductMapProducts" Relationship="OStoreDBModel.FK_ProductMapProduct_Product1" FromRole="Product" ToRole="ProductMapProduct" />
+    <NavigationProperty Name="ProductMapVariants" Relationship="OStoreDBModel.FK_ProductMapVariant_Product" FromRole="Product" ToRole="ProductMapVariant" />
+    <NavigationProperty Name="ProductReviews" Relationship="OStoreDBModel.FK_ProductReview_Product" FromRole="Product" ToRole="ProductReview" />
+    <NavigationProperty Name="PromotionMapProducts" Relationship="OStoreDBModel.FK_PromotionMapProduct_Product" FromRole="Product" ToRole="PromotionMapProduct" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryImageURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SecondaryImageURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryBoxSeq" Type="Int32" />
+    <Property Name="SecondaryBoxSeq" Type="Int32" />
+    <Property Name="Seq" Type="Int32" />
+    <Property Name="Show" Type="Boolean" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProductCategory1" Relationship="OStoreDBModel.FK_ProductCategory_ProductCategory1" FromRole="ProductCategory" ToRole="ProductCategory1" />
+    <NavigationProperty Name="ProductCategory2" Relationship="OStoreDBModel.FK_ProductCategory_ProductCategory1" FromRole="ProductCategory1" ToRole="ProductCategory" />
+    <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_ProductCategory_Shop" FromRole="ProductCategory" ToRole="Shop" />
+    <NavigationProperty Name="ProductMapCategories" Relationship="OStoreDBModel.FK_ProductMapCategory_ProductCategory" FromRole="ProductCategory" ToRole="ProductMapCategory" />
+    <NavigationProperty Name="PromotionMapCategories" Relationship="OStoreDBModel.FK_PromotionMapCategory_ProductCategory" FromRole="ProductCategory" ToRole="PromotionMapCategory" />
+  </EntityType>
+  <EntityType Name="ProductImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="ImageURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Seq" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="OStoreDBModel.FK_ProductImage_Product" FromRole="ProductImage" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MFSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UNSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SpecialPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OnHandQuantity" Type="Int32" Nullable="false" />
+    <Property Name="OrderQuantity" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PersonOrderDetails" Relationship="OStoreDBModel.FK_PersonOrderDetail_ProductItem" FromRole="ProductItem" ToRole="PersonOrderDetail" />
+    <NavigationProperty Name="Product" Relationship="OStoreDBModel.FK_ProductItem_Product" FromRole="ProductItem" ToRole="Product" />
+    <NavigationProperty Name="ProductItemMapVariants" Relationship="OStoreDBModel.FK_ProductItemMapVariant_ProductItem" FromRole="ProductItem" ToRole="ProductItemMapVariant" />
+    <NavigationProperty Name="ShopingCardDetails" Relationship="OStoreDBModel.FK_ShopingCardDetail_ProductItem" FromRole="ProductItem" ToRole="ShopingCardDetail" />
+  </EntityType>
+  <EntityType Name="ProductItemMapVariant">
+    <Key>
+      <PropertyRef Name="ProductItemId" />
+      <PropertyRef Name="ProductVariantId" />
+    </Key>
+    <Property Name="ProductItemId" Type="Int32" Nullable="false" />
+    <Property Name="ProductVariantId" Type="Int32" Nullable="false" />
+    <Property Name="Value1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Value2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProductItem" Relationship="OStoreDBModel.FK_ProductItemMapVariant_ProductItem" FromRole="ProductItemMapVariant" ToRole="ProductItem" />
+    <NavigationProperty Name="ProductVariant" Relationship="OStoreDBModel.FK_ProductItemMapVariant_ProductVariant" FromRole="ProductItemMapVariant" ToRole="ProductVariant" />
+  </EntityType>
+  <EntityType Name="ProductMapCategory">
+    <Key>
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="ProductCategoryId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="ProductCategoryId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="OStoreDBModel.FK_ProductMapCategory_Product" FromRole="ProductMapCategory" ToRole="Product" />
+    <NavigationProperty Name="ProductCategory" Relationship="OStoreDBModel.FK_ProductMapCategory_ProductCategory" FromRole="ProductMapCategory" ToRole="ProductCategory" />
+  </EntityType>
+  <EntityType Name="ProductMapProduct">
+    <Key>
+      <PropertyRef Name="ShopId" />
+      <PropertyRef Name="ProductId1" />
+      <PropertyRef Name="ProductId2" />
+    </Key>
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId1" Type="Int32" Nullable="false" />
+    <Property Name="ProductId2" Type="Int32" Nullable="false" />
+    <Property Name="ProductRelationTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Seq" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="OStoreDBModel.FK_ProductMapProduct_Product1" FromRole="ProductMapProduct" ToRole="Product" />
+    <NavigationProperty Name="ProductRelationType" Relationship="OStoreDBModel.FK_ProductMapProduct_Product" FromRole="ProductMapProduct" ToRole="ProductRelationType" />
+    <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_ProductMapProduct_Shop" FromRole="ProductMapProduct" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="ProductMapVariant">
+    <Key>
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="ProductVariantId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="ProductVariantId" Type="Int32" Nullable="false" />
+    <Property Name="Show" Type="Boolean" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="OStoreDBModel.FK_ProductMapVariant_Product" FromRole="ProductMapVariant" ToRole="Product" />
+    <NavigationProperty Name="ProductMapVariantDetails" Relationship="OStoreDBModel.FK_ProductMapVariantDetail_ProductMapVariant" FromRole="ProductMapVariant" ToRole="ProductMapVariantDetail" />
+  </EntityType>
+  <EntityType Name="ProductMapVariantDetail">
+    <Key>
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="ProductVariantId" />
+      <PropertyRef Name="ProductVariantDetailId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="ProductVariantId" Type="Int32" Nullable="false" />
+    <Property Name="ProductVariantDetailId" Type="Int32" Nullable="false" />
+    <Property Name="Value1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Value2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Show" Type="Boolean" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProductMapVariant" Relationship="OStoreDBModel.FK_ProductMapVariantDetail_ProductMapVariant" FromRole="ProductMapVariantDetail" ToRole="ProductMapVariant" />
+    <NavigationProperty Name="ProductVariantDetail" Relationship="OStoreDBModel.FK_ProductMapVariantDetail_ProductVariantDetail" FromRole="ProductMapVariantDetail" ToRole="ProductVariantDetail" />
+  </EntityType>
+  <EntityType Name="ProductRelationType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProductMapProducts" Relationship="OStoreDBModel.FK_ProductMapProduct_Product" FromRole="ProductRelationType" ToRole="ProductMapProduct" />
+  </EntityType>
+  <EntityType Name="ProductReview">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Topic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="ReviewStatusId" Type="Int32" />
+    <Property Name="Rate" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="OStoreDBModel.FK_ProductReview_Product" FromRole="ProductReview" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductVariant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProductItemMapVariants" Relationship="OStoreDBModel.FK_ProductItemMapVariant_ProductVariant" FromRole="ProductVariant" ToRole="ProductItemMapVariant" />
+    <NavigationProperty Name="ProductVariantDetails" Relationship="OStoreDBModel.FK_ProductVariantDetail_ProductVariant" FromRole="ProductVariant" ToRole="ProductVariantDetail" />
+    <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_Variant_Shop" FromRole="ProductVariant" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="ProductVariantDetail">
+    <Key>
+      <PropertyRef Name="ProductVariantId" />
+      <PropertyRef Name="ProductVariantDetailId" />
+    </Key>
+    <Property Name="ProductVariantId" Type="Int32" Nullable="false" />
+    <Property Name="ProductVariantDetailId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Seq" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProductMapVariantDetails" Relationship="OStoreDBModel.FK_ProductMapVariantDetail_ProductVariantDetail" FromRole="ProductVariantDetail" ToRole="ProductMapVariantDetail" />
+    <NavigationProperty Name="ProductVariant" Relationship="OStoreDBModel.FK_ProductVariantDetail_ProductVariant" FromRole="ProductVariantDetail" ToRole="ProductVariant" />
+  </EntityType>
+  <EntityType Name="Promotion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DiscountTypeId" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Percentage" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="LimitTotal" Type="Int32" />
+    <Property Name="LimitPerCustomer" Type="Int32" />
+    <Property Name="MinimumPurchase" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="MaximumDiscount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="3" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PersonOrders" Relationship="OStoreDBModel.FK_PersonOrder_Promotion" FromRole="Promotion" ToRole="PersonOrder" />
+    <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_Promotion_Shop" FromRole="Promotion" ToRole="Shop" />
+    <NavigationProperty Name="PromotionMapCategories" Relationship="OStoreDBModel.FK_PromotionMapCategory_Promotion" FromRole="Promotion" ToRole="PromotionMapCategory" />
+    <NavigationProperty Name="PromotionMapProducts" Relationship="OStoreDBModel.FK_PromotionMapProduct_Promotion" FromRole="Promotion" ToRole="PromotionMapProduct" />
+  </EntityType>
+  <EntityType Name="PromotionMapCategory">
+    <Key>
+      <PropertyRef Name="PromotionId" />
+      <PropertyRef Name="ProductCategoryId" />
+    </Key>
+    <Property Name="PromotionId" Type="Int32" Nullable="false" />
+    <Property Name="ProductCategoryId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProductCategory" Relationship="OStoreDBModel.FK_PromotionMapCategory_ProductCategory" FromRole="PromotionMapCategory" ToRole="ProductCategory" />
+    <NavigationProperty Name="Promotion" Relationship="OStoreDBModel.FK_PromotionMapCategory_Promotion" FromRole="PromotionMapCategory" ToRole="Promotion" />
+  </EntityType>
+  <EntityType Name="PromotionMapProduct">
+    <Key>
+      <PropertyRef Name="PromotionId" />
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="PromotionId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Product" Relationship="OStoreDBModel.FK_PromotionMapProduct_Product" FromRole="PromotionMapProduct" ToRole="Product" />
+    <NavigationProperty Name="Promotion" Relationship="OStoreDBModel.FK_PromotionMapProduct_Promotion" FromRole="PromotionMapProduct" ToRole="Promotion" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Country" Relationship="OStoreDBModel.FK_Province_Country" FromRole="Province" ToRole="Country" />
+    <NavigationProperty Name="Districts" Relationship="OStoreDBModel.FK_District_Province" FromRole="Province" ToRole="District" />
+  </EntityType>
+  <EntityType Name="ReviewStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Seq" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SaleChannel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PersonOrders" Relationship="OStoreDBModel.FK_PersonOrder_SaleChannel" FromRole="SaleChannel" ToRole="PersonOrder" />
+    <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_SaleChannel_Shop" FromRole="SaleChannel" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="Shop">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShortName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LongName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DNS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Vision" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FacebookId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LineId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="InstargramId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="TimZoneId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AuthorizeGroups" Relationship="OStoreDBModel.FK_AuthorizeGroup_Shop" FromRole="Shop" ToRole="AuthorizeGroup" />
+    <NavigationProperty Name="AuthorizeRoles" Relationship="OStoreDBModel.FK_AuthorizeRole_Shop" FromRole="Shop" ToRole="AuthorizeRole" />
+    <NavigationProperty Name="AuthorizeUsers" Relationship="OStoreDBModel.FK_AuthorizeUser_Shop" FromRole="Shop" ToRole="AuthorizeUser" />
+    <NavigationProperty Name="People" Relationship="OStoreDBModel.FK_Person_Shop" FromRole="Shop" ToRole="Person" />
+    <NavigationProperty Name="PersonOrders" Relationship="OStoreDBModel.FK_PersonOrder_Shop" FromRole="Shop" ToRole="PersonOrder" />
+    <NavigationProperty Name="ProductCategories" Relationship="OStoreDBModel.FK_ProductCategory_Shop" FromRole="Shop" ToRole="ProductCategory" />
+    <NavigationProperty Name="ProductMapProducts" Relationship="OStoreDBModel.FK_ProductMapProduct_Shop" FromRole="Shop" ToRole="ProductMapProduct" />
+    <NavigationProperty Name="ProductVariants" Relationship="OStoreDBModel.FK_Variant_Shop" FromRole="Shop" ToRole="ProductVariant" />
+    <NavigationProperty Name="Promotions" Relationship="OStoreDBModel.FK_Promotion_Shop" FromRole="Shop" ToRole="Promotion" />
+    <NavigationProperty Name="SaleChannels" Relationship="OStoreDBModel.FK_SaleChannel_Shop" FromRole="Shop" ToRole="SaleChannel" />
+    <NavigationProperty Name="ShopingCards" Relationship="OStoreDBModel.FK_ShopingCard_Shop" FromRole="Shop" ToRole="ShopingCard" />
+    <NavigationProperty Name="ShopMapPaymentChannels" Relationship="OStoreDBModel.FK_ShopMapPaymentChannel_Shop" FromRole="Shop" ToRole="ShopMapPaymentChannel" />
+  </EntityType>
+  <EntityType Name="ShopingCard">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="PersonId" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Person" Relationship="OStoreDBModel.FK_ShopingCard_Person" FromRole="ShopingCard" ToRole="Person" />
+    <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_ShopingCard_Shop" FromRole="ShopingCard" ToRole="Shop" />
+    <NavigationProperty Name="ShopingCardDetails" Relationship="OStoreDBModel.FK_ShopingCardDetail_ShopingCard" FromRole="ShopingCard" ToRole="ShopingCardDetail" />
+  </EntityType>
+  <EntityType Name="ShopingCardDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" />
+    <Property Name="ShopingCardId" Type="Int32" Nullable="false" />
+    <Property Name="ProductItemId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ProductItem" Relationship="OStoreDBModel.FK_ShopingCardDetail_ProductItem" FromRole="ShopingCardDetail" ToRole="ProductItem" />
+    <NavigationProperty Name="ShopingCard" Relationship="OStoreDBModel.FK_ShopingCardDetail_ShopingCard" FromRole="ShopingCardDetail" ToRole="ShopingCard" />
+  </EntityType>
+  <EntityType Name="ShopMapPaymentChannel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentChannelId" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PaymentChannel" Relationship="OStoreDBModel.FK_ShopMapPaymentChannel_PaymentChannel1" FromRole="ShopMapPaymentChannel" ToRole="PaymentChannel" />
+    <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_ShopMapPaymentChannel_Shop" FromRole="ShopMapPaymentChannel" ToRole="Shop" />
+    <NavigationProperty Name="ShopPaymentAccounts" Relationship="OStoreDBModel.FK_ShopPaymentAccount_ShopMapPaymentChannel" FromRole="ShopMapPaymentChannel" ToRole="ShopPaymentAccount" />
+  </EntityType>
+  <EntityType Name="ShopPaymentAccount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopMapPaymentChannelId" Type="Int32" Nullable="false" />
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BankId" Type="Int32" />
+    <Property Name="Branch" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Bank" Relationship="OStoreDBModel.FK_ShopPaymentAccount_Bank" FromRole="ShopPaymentAccount" ToRole="Bank" />
+    <NavigationProperty Name="ShopMapPaymentChannel" Relationship="OStoreDBModel.FK_ShopPaymentAccount_ShopMapPaymentChannel" FromRole="ShopPaymentAccount" ToRole="ShopMapPaymentChannel" />
+  </EntityType>
+  <EntityType Name="SubDistrict">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="DistrictId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="District" Relationship="OStoreDBModel.FK_SubDistrict_District" FromRole="SubDistrict" ToRole="District" />
+    <NavigationProperty Name="PostalCodes" Relationship="OStoreDBModel.FK_PostalCode_SubDistrict" FromRole="SubDistrict" ToRole="PostalCode" />
+  </EntityType>
+  <EntityType Name="TimeZone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CultureCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CreateBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateBy" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_PersonAddress_AddressType">
+    <End Type="OStoreDBModel.AddressType" Role="AddressType" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.PersonAddress" Role="PersonAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AddressType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonAddress">
+        <PropertyRef Name="AddressTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeExternalSystemUser_AuthorizeUser">
+    <End Type="OStoreDBModel.AuthorizeUser" Role="AuthorizeUser" Multiplicity="1" />
+    <End Type="OStoreDBModel.AuthorizeExternalSystemUser" Role="AuthorizeExternalSystemUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorizeUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeExternalSystemUser">
+        <PropertyRef Name="AuthorizeUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeExternalSystemUser_ExternalSystem">
+    <End Type="OStoreDBModel.ExternalSystem" Role="ExternalSystem" Multiplicity="1" />
+    <End Type="OStoreDBModel.AuthorizeExternalSystemUser" Role="AuthorizeExternalSystemUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExternalSystem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeExternalSystemUser">
+        <PropertyRef Name="ExternalSystemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeGroup_Shop">
+    <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.AuthorizeGroup" Role="AuthorizeGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeGroup">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeGroupMapRole_AuthorizeGroup">
+    <End Type="OStoreDBModel.AuthorizeGroup" Role="AuthorizeGroup" Multiplicity="1" />
+    <End Type="OStoreDBModel.AuthorizeGroupMapRole" Role="AuthorizeGroupMapRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorizeGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeGroupMapRole">
+        <PropertyRef Name="AuthorizeGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeUserMapGroup_AuthorizeGroup">
+    <End Type="OStoreDBModel.AuthorizeGroup" Role="AuthorizeGroup" Multiplicity="1" />
+    <End Type="OStoreDBModel.AuthorizeUserMapGroup" Role="AuthorizeUserMapGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorizeGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeUserMapGroup">
+        <PropertyRef Name="AuthorizeGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeGroupMapRole_AuthorizeRole">
+    <End Type="OStoreDBModel.AuthorizeRole" Role="AuthorizeRole" Multiplicity="1" />
+    <End Type="OStoreDBModel.AuthorizeGroupMapRole" Role="AuthorizeGroupMapRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorizeRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeGroupMapRole">
+        <PropertyRef Name="AuthorizeRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeRole_Shop">
+    <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.AuthorizeRole" Role="AuthorizeRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeRole">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeRoleMapMenu_AuthorizeRole">
+    <End Type="OStoreDBModel.AuthorizeRole" Role="AuthorizeRole" Multiplicity="1" />
+    <End Type="OStoreDBModel.AuthorizeRoleMapMenu" Role="AuthorizeRoleMapMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorizeRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeRoleMapMenu">
+        <PropertyRef Name="AuthorizeRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeRoleMapMenu_Menu">
+    <End Type="OStoreDBModel.Menu" Role="Menu" Multiplicity="1" />
+    <End Type="OStoreDBModel.AuthorizeRoleMapMenu" Role="AuthorizeRoleMapMenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeRoleMapMenu">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeUser_Person">
+    <End Type="OStoreDBModel.Person" Role="Person" Multiplicity="1" />
+    <End Type="OStoreDBModel.AuthorizeUser" Role="AuthorizeUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeUser">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeUser_Shop">
+    <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="OStoreDBModel.AuthorizeUser" Role="AuthorizeUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeUser">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuthorizeUserMapGroup_AuthorizeUser">
+    <End Type="OStoreDBModel.AuthorizeUser" Role="AuthorizeUser" Multiplicity="1" />
+    <End Type="OStoreDBModel.AuthorizeUserMapGroup" Role="AuthorizeUserMapGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AuthorizeUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuthorizeUserMapGroup">
+        <PropertyRef Name="AuthorizeUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopPaymentAccount_Bank">
+    <End Type="OStoreDBModel.Bank" Role="Bank" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.ShopPaymentAccount" Role="ShopPaymentAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bank">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopPaymentAccount">
+        <PropertyRef Name="BankId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Province_Country">
+    <End Type="OStoreDBModel.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.Province" Role="Province" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Province">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_District_Province">
+    <End Type="OStoreDBModel.Province" Role="Province" Multiplicity="1" />
+    <End Type="OStoreDBModel.District" Role="District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="District">
+        <PropertyRef Name="ProvinceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubDistrict_District">
+    <End Type="OStoreDBModel.District" Role="District" Multiplicity="1" />
+    <End Type="OStoreDBModel.SubDistrict" Role="SubDistrict" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubDistrict">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopMapPaymentChannel_PaymentChannel1">
+    <End Type="OStoreDBModel.PaymentChannel" Role="PaymentChannel" Multiplicity="1" />
+    <End Type="OStoreDBModel.ShopMapPaymentChannel" Role="ShopMapPaymentChannel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentChannel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopMapPaymentChannel">
+        <PropertyRef Name="PaymentChannelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_Shop">
+    <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.Person" Role="Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonAddress_Person">
+    <End Type="OStoreDBModel.Person" Role="Person" Multiplicity="1" />
+    <End Type="OStoreDBModel.PersonAddress" Role="PersonAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonAddress">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonMapType_Person">
+    <End Type="OStoreDBModel.Person" Role="Person" Multiplicity="1" />
+    <End Type="OStoreDBModel.PersonMapType" Role="PersonMapType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonMapType">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonOrder_Person">
+    <End Type="OStoreDBModel.Person" Role="Person" Multiplicity="1" />
+    <End Type="OStoreDBModel.PersonOrder" Role="PersonOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonOrder">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopingCard_Person">
+    <End Type="OStoreDBModel.Person" Role="Person" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.ShopingCard" Role="ShopingCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopingCard">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonAddress_PostalCode">
+    <End Type="OStoreDBModel.PostalCode" Role="PostalCode" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.PersonAddress" Role="PersonAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostalCode">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonAddress">
+        <PropertyRef Name="PostalCodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonOrder_PersonAddress">
+    <End Type="OStoreDBModel.PersonAddress" Role="PersonAddress" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.PersonOrder" Role="PersonOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PersonAddress">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonOrder">
+        <PropertyRef Name="ShippingAddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonOrder_PersonAddress1">
+    <End Type="OStoreDBModel.PersonAddress" Role="PersonAddress" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.PersonOrder" Role="PersonOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PersonAddress">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonOrder">
+        <PropertyRef Name="BillingAddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonMapType_PersonType">
+    <End Type="OStoreDBModel.PersonType" Role="PersonType" Multiplicity="1" />
+    <End Type="OStoreDBModel.PersonMapType" Role="PersonMapType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PersonType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonMapType">
+        <PropertyRef Name="PersonTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonOrder_Promotion">
+    <End Type="OStoreDBModel.Promotion" Role="Promotion" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.PersonOrder" Role="PersonOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Promotion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonOrder">
+        <PropertyRef Name="PromotionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonOrder_SaleChannel">
+    <End Type="OStoreDBModel.SaleChannel" Role="SaleChannel" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.PersonOrder" Role="PersonOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaleChannel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonOrder">
+        <PropertyRef Name="SaleChannelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonOrder_Shop">
+    <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="OStoreDBModel.PersonOrder" Role="PersonOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonOrder">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonOrderDetail_PersonOrder">
+    <End Type="OStoreDBModel.PersonOrder" Role="PersonOrder" Multiplicity="1" />
+    <End Type="OStoreDBModel.PersonOrderDetail" Role="PersonOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PersonOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonOrderDetail">
+        <PropertyRef Name="PersonOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonOrderDetail_ProductItem">
+    <End Type="OStoreDBModel.ProductItem" Role="ProductItem" Multiplicity="1" />
+    <End Type="OStoreDBModel.PersonOrderDetail" Role="PersonOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonOrderDetail">
+        <PropertyRef Name="ProductItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PostalCode_SubDistrict">
+    <End Type="OStoreDBModel.SubDistrict" Role="SubDistrict" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.PostalCode" Role="PostalCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubDistrict">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PostalCode">
+        <PropertyRef Name="SubDistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductImage_Product">
+    <End Type="OStoreDBModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductItem_Product">
+    <End Type="OStoreDBModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.ProductItem" Role="ProductItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductItem">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMapCategory_Product">
+    <End Type="OStoreDBModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="OStoreDBModel.ProductMapCategory" Role="ProductMapCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductMapCategory">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMapProduct_Product1">
+    <End Type="OStoreDBModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="OStoreDBModel.ProductMapProduct" Role="ProductMapProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductMapProduct">
+        <PropertyRef Name="ProductId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMapVariant_Product">
+    <End Type="OStoreDBModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="OStoreDBModel.ProductMapVariant" Role="ProductMapVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductMapVariant">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductReview_Product">
+    <End Type="OStoreDBModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.ProductReview" Role="ProductReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductReview">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PromotionMapProduct_Product">
+    <End Type="OStoreDBModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="OStoreDBModel.PromotionMapProduct" Role="PromotionMapProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PromotionMapProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategory_ProductCategory1">
+    <End Type="OStoreDBModel.ProductCategory" Role="ProductCategory" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.ProductCategory" Role="ProductCategory1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategory1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductCategory_Shop">
+    <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.ProductCategory" Role="ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductCategory">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMapCategory_ProductCategory">
+    <End Type="OStoreDBModel.ProductCategory" Role="ProductCategory" Multiplicity="1" />
+    <End Type="OStoreDBModel.ProductMapCategory" Role="ProductMapCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductMapCategory">
+        <PropertyRef Name="ProductCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PromotionMapCategory_ProductCategory">
+    <End Type="OStoreDBModel.ProductCategory" Role="ProductCategory" Multiplicity="1" />
+    <End Type="OStoreDBModel.PromotionMapCategory" Role="PromotionMapCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PromotionMapCategory">
+        <PropertyRef Name="ProductCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductItemMapVariant_ProductItem">
+    <End Type="OStoreDBModel.ProductItem" Role="ProductItem" Multiplicity="1" />
+    <End Type="OStoreDBModel.ProductItemMapVariant" Role="ProductItemMapVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductItemMapVariant">
+        <PropertyRef Name="ProductItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopingCardDetail_ProductItem">
+    <End Type="OStoreDBModel.ProductItem" Role="ProductItem" Multiplicity="1" />
+    <End Type="OStoreDBModel.ShopingCardDetail" Role="ShopingCardDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductItem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopingCardDetail">
+        <PropertyRef Name="ProductItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductItemMapVariant_ProductVariant">
+    <End Type="OStoreDBModel.ProductVariant" Role="ProductVariant" Multiplicity="1" />
+    <End Type="OStoreDBModel.ProductItemMapVariant" Role="ProductItemMapVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductVariant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductItemMapVariant">
+        <PropertyRef Name="ProductVariantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMapProduct_Product">
+    <End Type="OStoreDBModel.ProductRelationType" Role="ProductRelationType" Multiplicity="1" />
+    <End Type="OStoreDBModel.ProductMapProduct" Role="ProductMapProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductRelationType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductMapProduct">
+        <PropertyRef Name="ProductRelationTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMapProduct_Shop">
+    <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="OStoreDBModel.ProductMapProduct" Role="ProductMapProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductMapProduct">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMapVariantDetail_ProductMapVariant">
+    <End Type="OStoreDBModel.ProductMapVariant" Role="ProductMapVariant" Multiplicity="1" />
+    <End Type="OStoreDBModel.ProductMapVariantDetail" Role="ProductMapVariantDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductMapVariant">
+        <PropertyRef Name="ProductId" />
+        <PropertyRef Name="ProductVariantId" />
+      </Principal>
+      <Dependent Role="ProductMapVariantDetail">
+        <PropertyRef Name="ProductId" />
+        <PropertyRef Name="ProductVariantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductMapVariantDetail_ProductVariantDetail">
+    <End Type="OStoreDBModel.ProductVariantDetail" Role="ProductVariantDetail" Multiplicity="1" />
+    <End Type="OStoreDBModel.ProductMapVariantDetail" Role="ProductMapVariantDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductVariantDetail">
+        <PropertyRef Name="ProductVariantId" />
+        <PropertyRef Name="ProductVariantDetailId" />
+      </Principal>
+      <Dependent Role="ProductMapVariantDetail">
+        <PropertyRef Name="ProductVariantId" />
+        <PropertyRef Name="ProductVariantDetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductVariantDetail_ProductVariant">
+    <End Type="OStoreDBModel.ProductVariant" Role="ProductVariant" Multiplicity="1" />
+    <End Type="OStoreDBModel.ProductVariantDetail" Role="ProductVariantDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductVariant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductVariantDetail">
+        <PropertyRef Name="ProductVariantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Variant_Shop">
+    <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="OStoreDBModel.ProductVariant" Role="ProductVariant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductVariant">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Promotion_Shop">
+    <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.Promotion" Role="Promotion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Promotion">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PromotionMapCategory_Promotion">
+    <End Type="OStoreDBModel.Promotion" Role="Promotion" Multiplicity="1" />
+    <End Type="OStoreDBModel.PromotionMapCategory" Role="PromotionMapCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Promotion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PromotionMapCategory">
+        <PropertyRef Name="PromotionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PromotionMapProduct_Promotion">
+    <End Type="OStoreDBModel.Promotion" Role="Promotion" Multiplicity="1" />
+    <End Type="OStoreDBModel.PromotionMapProduct" Role="PromotionMapProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Promotion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PromotionMapProduct">
+        <PropertyRef Name="PromotionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleChannel_Shop">
+    <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="0..1" />
+    <End Type="OStoreDBModel.SaleChannel" Role="SaleChannel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleChannel">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopingCard_Shop">
+    <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="OStoreDBModel.ShopingCard" Role="ShopingCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopingCard">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopMapPaymentChannel_Shop">
+    <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="OStoreDBModel.ShopMapPaymentChannel" Role="ShopMapPaymentChannel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopMapPaymentChannel">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopingCardDetail_ShopingCard">
+    <End Type="OStoreDBModel.ShopingCard" Role="ShopingCard" Multiplicity="1" />
+    <End Type="OStoreDBModel.ShopingCardDetail" Role="ShopingCardDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShopingCard">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopingCardDetail">
+        <PropertyRef Name="ShopingCardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopPaymentAccount_ShopMapPaymentChannel">
+    <End Type="OStoreDBModel.ShopMapPaymentChannel" Role="ShopMapPaymentChannel" Multiplicity="1" />
+    <End Type="OStoreDBModel.ShopPaymentAccount" Role="ShopPaymentAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShopMapPaymentChannel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopPaymentAccount">
+        <PropertyRef Name="ShopMapPaymentChannelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

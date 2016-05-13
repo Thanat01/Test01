@@ -1,0 +1,7 @@
+C:\Projects\OnlineStore\Library\Helper\Library.Helper.Tokten\bin\Debug\Library.Helper.Tokten.dll
+C:\Projects\OnlineStore\Library\Helper\Library.Helper.Tokten\bin\Debug\Library.Helper.Tokten.pdb
+C:\Projects\OnlineStore\Library\Helper\Library.Helper.Tokten\bin\Debug\Library.Helper.Cryptogram.dll
+C:\Projects\OnlineStore\Library\Helper\Library.Helper.Tokten\bin\Debug\Library.Helper.Cryptogram.pdb
+C:\Projects\OnlineStore\Library\Helper\Library.Helper.Tokten\obj\Debug\Library.Helper.Token.csprojResolveAssemblyReference.cache
+C:\Projects\OnlineStore\Library\Helper\Library.Helper.Tokten\obj\Debug\Library.Helper.Tokten.dll
+C:\Projects\OnlineStore\Library\Helper\Library.Helper.Tokten\obj\Debug\Library.Helper.Tokten.pdb
