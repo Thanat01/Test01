@@ -6,3 +6,8 @@ C:\Projects\OnlineStore\Library\Api\Library.Api.Model\bin\Debug\Library.Api.Mode
 C:\Projects\OnlineStore\Library\Api\Library.Api.Model\bin\Debug\Library.Api.Model.pdb
 C:\Projects\OnlineStore\Library\Api\Library.Api.Model\obj\Debug\Library.Api.Model.dll
 C:\Projects\OnlineStore\Library\Api\Library.Api.Model\obj\Debug\Library.Api.Model.pdb
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Model\bin\Debug\Library.Api.Model.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Model\bin\Debug\Library.Api.Model.pdb
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Model\obj\Debug\Library.Api.Model.csprojResolveAssemblyReference.cache
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Model\obj\Debug\Library.Api.Model.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Model\obj\Debug\Library.Api.Model.pdb

@@ -87,6 +87,12 @@
     <Compile Include="EF\Currency.cs">
       <DependentUpon>OStoreEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\DeliveryChannel.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\DeliveryChannelMapProvince.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\District.cs">
       <DependentUpon>OStoreEntity.tt</DependentUpon>
     </Compile>
@@ -198,16 +204,19 @@
     <Compile Include="EF\Shop.cs">
       <DependentUpon>OStoreEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\ShopingCard.cs">
-      <DependentUpon>OStoreEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\ShopingCardDetail.cs">
+    <Compile Include="EF\ShopMapDeliveryChannel.cs">
       <DependentUpon>OStoreEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\ShopMapPaymentChannel.cs">
       <DependentUpon>OStoreEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\ShopPaymentAccount.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ShoppingCart.cs">
+      <DependentUpon>OStoreEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\ShoppingCartDetail.cs">
       <DependentUpon>OStoreEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\SubDistrict.cs">

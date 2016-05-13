@@ -13,19 +13,17 @@ namespace OStore.Data.EF
     using System.Collections.Generic;
     
     [Serializable]
-    public partial class ShopingCardDetail
+    public partial class DeliveryChannelMapProvince
     {
-        public long Id { get; set; }
-        public int ShopingCardId { get; set; }
-        public int ProductItemId { get; set; }
-        public Nullable<int> Quantity { get; set; }
+        public int DeliveryChannelId { get; set; }
+        public int ProvinceId { get; set; }
         public bool IsActive { get; set; }
         public Nullable<int> CreateBy { get; set; }
         public System.DateTime CreateDate { get; set; }
         public Nullable<int> UpdateBy { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
     
-        public virtual ProductItem ProductItem { get; set; }
-        public virtual ShopingCard ShopingCard { get; set; }
+        public virtual DeliveryChannel DeliveryChannel { get; set; }
+        public virtual Province Province { get; set; }
     }
 }

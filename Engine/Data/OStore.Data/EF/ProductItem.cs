@@ -20,7 +20,7 @@ namespace OStore.Data.EF
         {
             this.PersonOrderDetails = new HashSet<PersonOrderDetail>();
             this.ProductItemMapVariants = new HashSet<ProductItemMapVariant>();
-            this.ShopingCardDetails = new HashSet<ShopingCardDetail>();
+            this.ShoppingCartDetails = new HashSet<ShoppingCartDetail>();
         }
     
         public int Id { get; set; }
@@ -48,6 +48,6 @@ namespace OStore.Data.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductItemMapVariant> ProductItemMapVariants { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ShopingCardDetail> ShopingCardDetails { get; set; }
+        public virtual ICollection<ShoppingCartDetail> ShoppingCartDetails { get; set; }
     }
 }

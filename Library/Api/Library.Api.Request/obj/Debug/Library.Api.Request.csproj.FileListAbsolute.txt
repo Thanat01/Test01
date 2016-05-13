@@ -9,3 +9,14 @@ C:\Projects\OnlineStore\Library\Api\Library.Api.Request\bin\Debug\Library.Helper
 C:\Projects\OnlineStore\Library\Api\Library.Api.Request\obj\Debug\Library.Api.Request.csprojResolveAssemblyReference.cache
 C:\Projects\OnlineStore\Library\Api\Library.Api.Request\obj\Debug\Library.Api.Request.dll
 C:\Projects\OnlineStore\Library\Api\Library.Api.Request\obj\Debug\Library.Api.Request.pdb
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Request\bin\Debug\Library.Api.Request.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Request\bin\Debug\Library.Api.Request.pdb
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Request\bin\Debug\Library.Helper.Tokten.Client.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Request\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Request\bin\Debug\Library.Helper.Cryptogram.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Request\bin\Debug\Library.Helper.Tokten.Client.pdb
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Request\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Request\bin\Debug\Library.Helper.Cryptogram.pdb
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Request\obj\Debug\Library.Api.Request.csprojResolveAssemblyReference.cache
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Request\obj\Debug\Library.Api.Request.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Request\obj\Debug\Library.Api.Request.pdb

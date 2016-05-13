@@ -303,5 +303,24 @@ namespace OStore.Providers
         }
 
         #endregion
+
+        #region Delivery
+        internal List<Models.Delivery.DeliveryChannelModel> GetDeliveryChannels(GetDeliveryChannelRequestModel model)
+        {
+            try
+            {
+                Library.Api.Request.ApiService api = new Library.Api.Request.ApiService(ConfigurationProvider.Instance.PMHostUrl, ConfigurationProvider.Instance.PMPublicKey, SessionProvider.Instance.CurrentShop.Id, UserId, UserName, Password, null);
+                GetDeliveryChannelResponseModel response = api.ApiRequest<GetDeliveryChannelResponseModel>("Delivery/GetDeliveryChannels", model);
+                if (response.ResponseCode == "OK")
+                    return response.DeliveryChannels;
+                else
+                    throw new Exception(response.ResponseMessage);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #endregion
     }
 }

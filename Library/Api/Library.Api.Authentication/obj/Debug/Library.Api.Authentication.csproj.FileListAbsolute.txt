@@ -26,3 +26,17 @@ C:\Projects\OnlineStore\Library\Api\Library.Api.Authentication\bin\Debug\System.
 C:\Projects\OnlineStore\Library\Api\Library.Api.Authentication\obj\Debug\Library.Api.Authentication.csprojResolveAssemblyReference.cache
 C:\Projects\OnlineStore\Library\Api\Library.Api.Authentication\obj\Debug\Library.Api.Authentication.dll
 C:\Projects\OnlineStore\Library\Api\Library.Api.Authentication\obj\Debug\Library.Api.Authentication.pdb
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\bin\Debug\Library.Api.Authentication.dll.config
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\bin\Debug\Library.Api.Authentication.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\bin\Debug\Library.Api.Authentication.pdb
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\bin\Debug\Newtonsoft.Json.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\bin\Debug\System.Net.Http.Formatting.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\bin\Debug\System.Web.Http.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\bin\Debug\System.Web.Http.WebHost.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\bin\Debug\Newtonsoft.Json.xml
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\bin\Debug\System.Net.Http.Formatting.xml
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\bin\Debug\System.Web.Http.xml
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\bin\Debug\System.Web.Http.WebHost.xml
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\obj\Debug\Library.Api.Authentication.csprojResolveAssemblyReference.cache
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\obj\Debug\Library.Api.Authentication.dll
+C:\Projects\OnlineStore\Test01\Library\Api\Library.Api.Authentication\obj\Debug\Library.Api.Authentication.pdb

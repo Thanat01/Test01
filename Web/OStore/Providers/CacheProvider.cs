@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using OStore.Libs.Extensions;
+using OStore.Models.Delivery;
 
 namespace OStore.Providers
 {
@@ -98,5 +99,27 @@ namespace OStore.Providers
         }
         #endregion
 
+        #region Delivery
+        public List<SelectListItem> DeliveryChannels
+        {
+            get
+            {
+                if (!IsIncache("DeliveryChannels"))
+                {
+                    List<DeliveryChannelModel> postalCodes = PMApi.Instance.GetDeliveryChannels(new ModelApi.GetDeliveryChannelRequestModel());
+
+                    var cached = postalCodes.ToSelectList(d => d.Name, d => d.Id.ToString(), "0", "Select DeliveryChannels", false);
+                    if (cached != null)
+                    {
+                        cached.RemoveAll(item => item.Text == null);
+                        SaveTocache("DeliveryChannels", cached, DateTime.Now.AddHours(10));
+                    }
+
+                }
+                return GetFromCache<List<SelectListItem>>("DeliveryChannels");
+            }
+        }
+
+        #endregion
     }
 }

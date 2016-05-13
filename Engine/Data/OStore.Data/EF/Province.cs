@@ -18,6 +18,7 @@ namespace OStore.Data.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Province()
         {
+            this.DeliveryChannelMapProvinces = new HashSet<DeliveryChannelMapProvince>();
             this.Districts = new HashSet<District>();
         }
     
@@ -32,6 +33,8 @@ namespace OStore.Data.EF
         public Nullable<System.DateTime> UpdateDate { get; set; }
     
         public virtual Country Country { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DeliveryChannelMapProvince> DeliveryChannelMapProvinces { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<District> Districts { get; set; }
     }

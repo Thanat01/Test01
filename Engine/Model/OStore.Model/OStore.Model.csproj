@@ -52,6 +52,7 @@
     <Compile Include="AuthorizationModel.cs" />
     <Compile Include="Base\AuthorizeRoleModel.cs" />
     <Compile Include="Base\AuthorizeUserModel.cs" />
+    <Compile Include="Base\DeliveryChannelModel.cs" />
     <Compile Include="Base\DistrictModel.cs" />
     <Compile Include="Base\PaymentChannelModel.cs" />
     <Compile Include="Base\PersonOrderModel.cs" />

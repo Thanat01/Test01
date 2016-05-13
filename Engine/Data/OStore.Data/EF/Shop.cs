@@ -28,8 +28,9 @@ namespace OStore.Data.EF
             this.ProductVariants = new HashSet<ProductVariant>();
             this.Promotions = new HashSet<Promotion>();
             this.SaleChannels = new HashSet<SaleChannel>();
-            this.ShopingCards = new HashSet<ShopingCard>();
+            this.ShopMapDeliveryChannels = new HashSet<ShopMapDeliveryChannel>();
             this.ShopMapPaymentChannels = new HashSet<ShopMapPaymentChannel>();
+            this.ShoppingCarts = new HashSet<ShoppingCart>();
         }
     
         public int Id { get; set; }
@@ -68,8 +69,10 @@ namespace OStore.Data.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SaleChannel> SaleChannels { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ShopingCard> ShopingCards { get; set; }
+        public virtual ICollection<ShopMapDeliveryChannel> ShopMapDeliveryChannels { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ShopMapPaymentChannel> ShopMapPaymentChannels { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; }
     }
 }

@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\CustomerBase.cs" />
+    <Compile Include="Base\DeliveryBase.cs" />
     <Compile Include="Base\LocationBase.cs" />
     <Compile Include="Base\MenuBase.cs" />
     <Compile Include="Base\PaymentBase.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Base\ProductCategoryBase.cs" />
     <Compile Include="Base\PromotionBase.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Delivery.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Payment.cs" />

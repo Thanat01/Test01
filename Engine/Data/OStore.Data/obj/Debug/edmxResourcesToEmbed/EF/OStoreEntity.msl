@@ -179,6 +179,33 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DeliveryChannels">
+      <EntityTypeMapping TypeName="OStoreDBModel.DeliveryChannel">
+        <MappingFragment StoreEntitySet="DeliveryChannel">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DeliveryChannelMapProvinces">
+      <EntityTypeMapping TypeName="OStoreDBModel.DeliveryChannelMapProvince">
+        <MappingFragment StoreEntitySet="DeliveryChannelMapProvince">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="DeliveryChannelId" ColumnName="DeliveryChannelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Districts">
       <EntityTypeMapping TypeName="OStoreDBModel.District">
         <MappingFragment StoreEntitySet="District">
@@ -714,32 +741,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ShopingCards">
-      <EntityTypeMapping TypeName="OStoreDBModel.ShopingCard">
-        <MappingFragment StoreEntitySet="ShopingCard">
+    <EntitySetMapping Name="ShopMapDeliveryChannels">
+      <EntityTypeMapping TypeName="OStoreDBModel.ShopMapDeliveryChannel">
+        <MappingFragment StoreEntitySet="ShopMapDeliveryChannel">
           <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
           <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="DeliveryChannelId" ColumnName="DeliveryChannelId" />
           <ScalarProperty Name="ShopId" ColumnName="ShopId" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ShopingCardDetails">
-      <EntityTypeMapping TypeName="OStoreDBModel.ShopingCardDetail">
-        <MappingFragment StoreEntitySet="ShopingCardDetail">
-          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
-          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="ProductItemId" ColumnName="ProductItemId" />
-          <ScalarProperty Name="ShopingCardId" ColumnName="ShopingCardId" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -770,6 +781,35 @@
           <ScalarProperty Name="BankId" ColumnName="BankId" />
           <ScalarProperty Name="Account" ColumnName="Account" />
           <ScalarProperty Name="ShopMapPaymentChannelId" ColumnName="ShopMapPaymentChannelId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShoppingCarts">
+      <EntityTypeMapping TypeName="OStoreDBModel.ShoppingCart">
+        <MappingFragment StoreEntitySet="ShoppingCart">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShoppingCartDetails">
+      <EntityTypeMapping TypeName="OStoreDBModel.ShoppingCartDetail">
+        <MappingFragment StoreEntitySet="ShoppingCartDetail">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ProductItemId" ColumnName="ProductItemId" />
+          <ScalarProperty Name="ShoppingCartId" ColumnName="ShoppingCartId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

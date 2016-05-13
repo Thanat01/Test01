@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PM.Business.Base
 {
-    public class LocationBase: Library.Business.Base.BusinessBase
+    public class LocationBase : Library.Business.Base.BusinessBase
     {
         public LocationBase(int shopId, int userId)
             : base(shopId, userId)

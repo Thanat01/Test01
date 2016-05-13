@@ -200,6 +200,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Customer\CustomerController.cs" />
+    <Compile Include="Controllers\Delivery\DeliveryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Location\LocationController.cs" />
     <Compile Include="Controllers\Menu\MenuController.cs" />
@@ -214,6 +215,7 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\GetCustomerModel.cs" />
+    <Compile Include="Models\GetDeliveryChannelModel.cs" />
     <Compile Include="Models\GetLocationModel.cs" />
     <Compile Include="Models\GetPaymentChannelsModel.cs" />
     <Compile Include="Models\GetProductModel.cs" />

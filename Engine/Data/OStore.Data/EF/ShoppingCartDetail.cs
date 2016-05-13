@@ -13,26 +13,19 @@ namespace OStore.Data.EF
     using System.Collections.Generic;
     
     [Serializable]
-    public partial class ShopingCard
+    public partial class ShoppingCartDetail
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ShopingCard()
-        {
-            this.ShopingCardDetails = new HashSet<ShopingCardDetail>();
-        }
-    
-        public int Id { get; set; }
-        public int ShopId { get; set; }
-        public Nullable<int> PersonId { get; set; }
+        public long Id { get; set; }
+        public int ShoppingCartId { get; set; }
+        public int ProductItemId { get; set; }
+        public Nullable<int> Quantity { get; set; }
         public bool IsActive { get; set; }
         public Nullable<int> CreateBy { get; set; }
         public System.DateTime CreateDate { get; set; }
         public Nullable<int> UpdateBy { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
     
-        public virtual Person Person { get; set; }
-        public virtual Shop Shop { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ShopingCardDetail> ShopingCardDetails { get; set; }
+        public virtual ProductItem ProductItem { get; set; }
+        public virtual ShoppingCart ShoppingCart { get; set; }
     }
 }

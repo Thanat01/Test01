@@ -22,11 +22,11 @@ namespace OStore.Data.EF
             this.PersonAddresses = new HashSet<PersonAddress>();
             this.PersonMapTypes = new HashSet<PersonMapType>();
             this.PersonOrders = new HashSet<PersonOrder>();
-            this.ShopingCards = new HashSet<ShopingCard>();
+            this.ShoppingCarts = new HashSet<ShoppingCart>();
         }
     
         public int Id { get; set; }
-        public Nullable<int> ShopId { get; set; }
+        public int ShopId { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Mobile1 { get; set; }
@@ -49,6 +49,6 @@ namespace OStore.Data.EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PersonOrder> PersonOrders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ShopingCard> ShopingCards { get; set; }
+        public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; }
     }
 }

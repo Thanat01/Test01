@@ -5,3 +5,10 @@ C:\Projects\OnlineStore\Library\Helper\Library.Helper.Tokten.Client\bin\Debug\Li
 C:\Projects\OnlineStore\Library\Helper\Library.Helper.Tokten.Client\obj\Debug\Library.Helper.Token.Client.csprojResolveAssemblyReference.cache
 C:\Projects\OnlineStore\Library\Helper\Library.Helper.Tokten.Client\obj\Debug\Library.Helper.Tokten.Client.dll
 C:\Projects\OnlineStore\Library\Helper\Library.Helper.Tokten.Client\obj\Debug\Library.Helper.Tokten.Client.pdb
+C:\Projects\OnlineStore\Test01\Library\Helper\Library.Helper.Tokten.Client\bin\Debug\Library.Helper.Tokten.Client.dll
+C:\Projects\OnlineStore\Test01\Library\Helper\Library.Helper.Tokten.Client\bin\Debug\Library.Helper.Tokten.Client.pdb
+C:\Projects\OnlineStore\Test01\Library\Helper\Library.Helper.Tokten.Client\bin\Debug\Library.Helper.Cryptogram.dll
+C:\Projects\OnlineStore\Test01\Library\Helper\Library.Helper.Tokten.Client\bin\Debug\Library.Helper.Cryptogram.pdb
+C:\Projects\OnlineStore\Test01\Library\Helper\Library.Helper.Tokten.Client\obj\Debug\Library.Helper.Token.Client.csprojResolveAssemblyReference.cache
+C:\Projects\OnlineStore\Test01\Library\Helper\Library.Helper.Tokten.Client\obj\Debug\Library.Helper.Tokten.Client.dll
+C:\Projects\OnlineStore\Test01\Library\Helper\Library.Helper.Tokten.Client\obj\Debug\Library.Helper.Tokten.Client.pdb

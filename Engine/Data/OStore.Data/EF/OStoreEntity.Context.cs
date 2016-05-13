@@ -36,6 +36,8 @@ namespace OStore.Data.EF
         public virtual DbSet<Bank> Banks { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<Currency> Currencies { get; set; }
+        public virtual DbSet<DeliveryChannel> DeliveryChannels { get; set; }
+        public virtual DbSet<DeliveryChannelMapProvince> DeliveryChannelMapProvinces { get; set; }
         public virtual DbSet<District> Districts { get; set; }
         public virtual DbSet<ExternalSystem> ExternalSystems { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
@@ -68,10 +70,11 @@ namespace OStore.Data.EF
         public virtual DbSet<ReviewStatu> ReviewStatus { get; set; }
         public virtual DbSet<SaleChannel> SaleChannels { get; set; }
         public virtual DbSet<Shop> Shops { get; set; }
-        public virtual DbSet<ShopingCard> ShopingCards { get; set; }
-        public virtual DbSet<ShopingCardDetail> ShopingCardDetails { get; set; }
+        public virtual DbSet<ShopMapDeliveryChannel> ShopMapDeliveryChannels { get; set; }
         public virtual DbSet<ShopMapPaymentChannel> ShopMapPaymentChannels { get; set; }
         public virtual DbSet<ShopPaymentAccount> ShopPaymentAccounts { get; set; }
+        public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
+        public virtual DbSet<ShoppingCartDetail> ShoppingCartDetails { get; set; }
         public virtual DbSet<SubDistrict> SubDistricts { get; set; }
         public virtual DbSet<TimeZone> TimeZones { get; set; }
     }

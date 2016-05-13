@@ -1,5 +1,6 @@
 ﻿using OStore.Models;
 using OStore.Models.Customer;
+using OStore.Models.Delivery;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -160,6 +161,8 @@ namespace OStore.Providers
             Remove("SaleChannels");
         }
         #endregion
+
+
 
     }
 }

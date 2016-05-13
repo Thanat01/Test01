@@ -176,6 +176,32 @@
           <Property Name="UpdateBy" Type="int" />
           <Property Name="UpdateDate" Type="datetime" />
         </EntityType>
+        <EntityType Name="DeliveryChannel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateBy" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DeliveryChannelMapProvince">
+          <Key>
+            <PropertyRef Name="DeliveryChannelId" />
+            <PropertyRef Name="ProvinceId" />
+          </Key>
+          <Property Name="DeliveryChannelId" Type="int" Nullable="false" />
+          <Property Name="ProvinceId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateBy" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
         <EntityType Name="District">
           <Key>
             <PropertyRef Name="Id" />
@@ -253,7 +279,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ShopId" Type="int" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
           <Property Name="Firstname" Type="nvarchar" MaxLength="100" />
           <Property Name="Lastname" Type="nvarchar" MaxLength="100" />
           <Property Name="Mobile1" Type="nvarchar" MaxLength="50" />
@@ -691,27 +717,13 @@
           <Property Name="UpdateDate" Type="datetime" />
           <Property Name="TimZoneId" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="ShopingCard">
+        <EntityType Name="ShopMapDeliveryChannel">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="DeliveryChannelId" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ShopId" Type="int" Nullable="false" />
-          <Property Name="PersonId" Type="int" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
-          <Property Name="CreateBy" Type="int" />
-          <Property Name="CreateDate" Type="datetime" Nullable="false" />
-          <Property Name="UpdateBy" Type="int" />
-          <Property Name="UpdateDate" Type="datetime" />
-        </EntityType>
-        <EntityType Name="ShopingCardDetail">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="bigint" Nullable="false" />
-          <Property Name="ShopingCardId" Type="int" Nullable="false" />
-          <Property Name="ProductItemId" Type="int" Nullable="false" />
-          <Property Name="Quantity" Type="int" />
+          <Property Name="DeliveryChannelId" Type="int" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
           <Property Name="CreateBy" Type="int" />
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
@@ -741,6 +753,33 @@
           <Property Name="BankId" Type="int" />
           <Property Name="Branch" Type="nvarchar" MaxLength="100" />
           <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateBy" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ShoppingCart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="PersonId" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateBy" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ShoppingCartDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="ShoppingCartId" Type="int" Nullable="false" />
+          <Property Name="ProductItemId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
           <Property Name="CreateBy" Type="int" />
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
@@ -917,6 +956,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_DeliveryChannelMapProvince_DeliveryChannel">
+          <End Role="DeliveryChannel" Type="Self.DeliveryChannel" Multiplicity="1" />
+          <End Role="DeliveryChannelMapProvince" Type="Self.DeliveryChannelMapProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryChannel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DeliveryChannelMapProvince">
+              <PropertyRef Name="DeliveryChannelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeliveryChannelMapProvince_Province">
+          <End Role="Province" Type="Self.Province" Multiplicity="1" />
+          <End Role="DeliveryChannelMapProvince" Type="Self.DeliveryChannelMapProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DeliveryChannelMapProvince">
+              <PropertyRef Name="ProvinceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_District_Province">
           <End Role="Province" Type="Self.Province" Multiplicity="1" />
           <End Role="District" Type="Self.District" Multiplicity="*" />
@@ -930,7 +993,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Person_Shop">
-          <End Role="Shop" Type="Self.Shop" Multiplicity="0..1" />
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
           <End Role="Person" Type="Self.Person" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Shop">
@@ -1389,51 +1452,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ShopingCard_Person">
-          <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
-          <End Role="ShopingCard" Type="Self.ShopingCard" Multiplicity="*" />
+        <Association Name="FK_ShopMapDeliveryChannel_DeliveryChannel">
+          <End Role="DeliveryChannel" Type="Self.DeliveryChannel" Multiplicity="1" />
+          <End Role="ShopMapDeliveryChannel" Type="Self.ShopMapDeliveryChannel" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Person">
+            <Principal Role="DeliveryChannel">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ShopingCard">
-              <PropertyRef Name="PersonId" />
+            <Dependent Role="ShopMapDeliveryChannel">
+              <PropertyRef Name="DeliveryChannelId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ShopingCard_Shop">
+        <Association Name="FK_ShopMapDeliveryChannel_Shop">
           <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
-          <End Role="ShopingCard" Type="Self.ShopingCard" Multiplicity="*" />
+          <End Role="ShopMapDeliveryChannel" Type="Self.ShopMapDeliveryChannel" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Shop">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ShopingCard">
+            <Dependent Role="ShopMapDeliveryChannel">
               <PropertyRef Name="ShopId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ShopingCardDetail_ProductItem">
-          <End Role="ProductItem" Type="Self.ProductItem" Multiplicity="1" />
-          <End Role="ShopingCardDetail" Type="Self.ShopingCardDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProductItem">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ShopingCardDetail">
-              <PropertyRef Name="ProductItemId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ShopingCardDetail_ShopingCard">
-          <End Role="ShopingCard" Type="Self.ShopingCard" Multiplicity="1" />
-          <End Role="ShopingCardDetail" Type="Self.ShopingCardDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ShopingCard">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ShopingCardDetail">
-              <PropertyRef Name="ShopingCardId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1485,6 +1524,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ShoppingCart_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShoppingCart">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCart_Shop">
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShoppingCart">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCartDetail_ProductItem">
+          <End Role="ProductItem" Type="Self.ProductItem" Multiplicity="1" />
+          <End Role="ShoppingCartDetail" Type="Self.ShoppingCartDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShoppingCartDetail">
+              <PropertyRef Name="ProductItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCartDetail_ShoppingCart">
+          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="1" />
+          <End Role="ShoppingCartDetail" Type="Self.ShoppingCartDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShoppingCart">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShoppingCartDetail">
+              <PropertyRef Name="ShoppingCartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_SubDistrict_District">
           <End Role="District" Type="Self.District" Multiplicity="1" />
           <End Role="SubDistrict" Type="Self.SubDistrict" Multiplicity="*" />
@@ -1521,6 +1608,8 @@
           <EntitySet Name="Bank" EntityType="Self.Bank" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeliveryChannel" EntityType="Self.DeliveryChannel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeliveryChannelMapProvince" EntityType="Self.DeliveryChannelMapProvince" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ExternalSystem" EntityType="Self.ExternalSystem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
@@ -1553,10 +1642,11 @@
           <EntitySet Name="ReviewStatus" EntityType="Self.ReviewStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SaleChannel" EntityType="Self.SaleChannel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Shop" EntityType="Self.Shop" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ShopingCard" EntityType="Self.ShopingCard" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ShopingCardDetail" EntityType="Self.ShopingCardDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShopMapDeliveryChannel" EntityType="Self.ShopMapDeliveryChannel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ShopMapPaymentChannel" EntityType="Self.ShopMapPaymentChannel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ShopPaymentAccount" EntityType="Self.ShopPaymentAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShoppingCart" EntityType="Self.ShoppingCart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShoppingCartDetail" EntityType="Self.ShoppingCartDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SubDistrict" EntityType="Self.SubDistrict" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TimeZone" EntityType="Self.TimeZone" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AuthorizeExternalSystemUser_AuthorizeUser" Association="Self.FK_AuthorizeExternalSystemUser_AuthorizeUser">
@@ -1606,6 +1696,14 @@
           <AssociationSet Name="FK_AuthorizeUserMapGroup_AuthorizeUser" Association="Self.FK_AuthorizeUserMapGroup_AuthorizeUser">
             <End Role="AuthorizeUser" EntitySet="AuthorizeUser" />
             <End Role="AuthorizeUserMapGroup" EntitySet="AuthorizeUserMapGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeliveryChannelMapProvince_DeliveryChannel" Association="Self.FK_DeliveryChannelMapProvince_DeliveryChannel">
+            <End Role="DeliveryChannel" EntitySet="DeliveryChannel" />
+            <End Role="DeliveryChannelMapProvince" EntitySet="DeliveryChannelMapProvince" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeliveryChannelMapProvince_Province" Association="Self.FK_DeliveryChannelMapProvince_Province">
+            <End Role="Province" EntitySet="Province" />
+            <End Role="DeliveryChannelMapProvince" EntitySet="DeliveryChannelMapProvince" />
           </AssociationSet>
           <AssociationSet Name="FK_District_Province" Association="Self.FK_District_Province">
             <End Role="Province" EntitySet="Province" />
@@ -1763,21 +1861,13 @@
             <End Role="Shop" EntitySet="Shop" />
             <End Role="SaleChannel" EntitySet="SaleChannel" />
           </AssociationSet>
-          <AssociationSet Name="FK_ShopingCard_Person" Association="Self.FK_ShopingCard_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="ShopingCard" EntitySet="ShopingCard" />
+          <AssociationSet Name="FK_ShopMapDeliveryChannel_DeliveryChannel" Association="Self.FK_ShopMapDeliveryChannel_DeliveryChannel">
+            <End Role="DeliveryChannel" EntitySet="DeliveryChannel" />
+            <End Role="ShopMapDeliveryChannel" EntitySet="ShopMapDeliveryChannel" />
           </AssociationSet>
-          <AssociationSet Name="FK_ShopingCard_Shop" Association="Self.FK_ShopingCard_Shop">
+          <AssociationSet Name="FK_ShopMapDeliveryChannel_Shop" Association="Self.FK_ShopMapDeliveryChannel_Shop">
             <End Role="Shop" EntitySet="Shop" />
-            <End Role="ShopingCard" EntitySet="ShopingCard" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ShopingCardDetail_ProductItem" Association="Self.FK_ShopingCardDetail_ProductItem">
-            <End Role="ProductItem" EntitySet="ProductItem" />
-            <End Role="ShopingCardDetail" EntitySet="ShopingCardDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ShopingCardDetail_ShopingCard" Association="Self.FK_ShopingCardDetail_ShopingCard">
-            <End Role="ShopingCard" EntitySet="ShopingCard" />
-            <End Role="ShopingCardDetail" EntitySet="ShopingCardDetail" />
+            <End Role="ShopMapDeliveryChannel" EntitySet="ShopMapDeliveryChannel" />
           </AssociationSet>
           <AssociationSet Name="FK_ShopMapPaymentChannel_PaymentChannel1" Association="Self.FK_ShopMapPaymentChannel_PaymentChannel1">
             <End Role="PaymentChannel" EntitySet="PaymentChannel" />
@@ -1794,6 +1884,22 @@
           <AssociationSet Name="FK_ShopPaymentAccount_ShopMapPaymentChannel" Association="Self.FK_ShopPaymentAccount_ShopMapPaymentChannel">
             <End Role="ShopMapPaymentChannel" EntitySet="ShopMapPaymentChannel" />
             <End Role="ShopPaymentAccount" EntitySet="ShopPaymentAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCart_Person" Association="Self.FK_ShoppingCart_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCart_Shop" Association="Self.FK_ShoppingCart_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCartDetail_ProductItem" Association="Self.FK_ShoppingCartDetail_ProductItem">
+            <End Role="ProductItem" EntitySet="ProductItem" />
+            <End Role="ShoppingCartDetail" EntitySet="ShoppingCartDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCartDetail_ShoppingCart" Association="Self.FK_ShoppingCartDetail_ShoppingCart">
+            <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+            <End Role="ShoppingCartDetail" EntitySet="ShoppingCartDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_SubDistrict_District" Association="Self.FK_SubDistrict_District">
             <End Role="District" EntitySet="District" />
@@ -1820,6 +1926,8 @@
           <EntitySet Name="Banks" EntityType="OStoreDBModel.Bank" />
           <EntitySet Name="Countries" EntityType="OStoreDBModel.Country" />
           <EntitySet Name="Currencies" EntityType="OStoreDBModel.Currency" />
+          <EntitySet Name="DeliveryChannels" EntityType="OStoreDBModel.DeliveryChannel" />
+          <EntitySet Name="DeliveryChannelMapProvinces" EntityType="OStoreDBModel.DeliveryChannelMapProvince" />
           <EntitySet Name="Districts" EntityType="OStoreDBModel.District" />
           <EntitySet Name="ExternalSystems" EntityType="OStoreDBModel.ExternalSystem" />
           <EntitySet Name="Menus" EntityType="OStoreDBModel.Menu" />
@@ -1852,10 +1960,11 @@
           <EntitySet Name="ReviewStatus" EntityType="OStoreDBModel.ReviewStatu" />
           <EntitySet Name="SaleChannels" EntityType="OStoreDBModel.SaleChannel" />
           <EntitySet Name="Shops" EntityType="OStoreDBModel.Shop" />
-          <EntitySet Name="ShopingCards" EntityType="OStoreDBModel.ShopingCard" />
-          <EntitySet Name="ShopingCardDetails" EntityType="OStoreDBModel.ShopingCardDetail" />
+          <EntitySet Name="ShopMapDeliveryChannels" EntityType="OStoreDBModel.ShopMapDeliveryChannel" />
           <EntitySet Name="ShopMapPaymentChannels" EntityType="OStoreDBModel.ShopMapPaymentChannel" />
           <EntitySet Name="ShopPaymentAccounts" EntityType="OStoreDBModel.ShopPaymentAccount" />
+          <EntitySet Name="ShoppingCarts" EntityType="OStoreDBModel.ShoppingCart" />
+          <EntitySet Name="ShoppingCartDetails" EntityType="OStoreDBModel.ShoppingCartDetail" />
           <EntitySet Name="SubDistricts" EntityType="OStoreDBModel.SubDistrict" />
           <EntitySet Name="TimeZones" EntityType="OStoreDBModel.TimeZone" />
           <AssociationSet Name="FK_PersonAddress_AddressType" Association="OStoreDBModel.FK_PersonAddress_AddressType">
@@ -1918,6 +2027,18 @@
             <End Role="Country" EntitySet="Countries" />
             <End Role="Province" EntitySet="Provinces" />
           </AssociationSet>
+          <AssociationSet Name="FK_DeliveryChannelMapProvince_DeliveryChannel" Association="OStoreDBModel.FK_DeliveryChannelMapProvince_DeliveryChannel">
+            <End Role="DeliveryChannel" EntitySet="DeliveryChannels" />
+            <End Role="DeliveryChannelMapProvince" EntitySet="DeliveryChannelMapProvinces" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopMapDeliveryChannel_DeliveryChannel" Association="OStoreDBModel.FK_ShopMapDeliveryChannel_DeliveryChannel">
+            <End Role="DeliveryChannel" EntitySet="DeliveryChannels" />
+            <End Role="ShopMapDeliveryChannel" EntitySet="ShopMapDeliveryChannels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeliveryChannelMapProvince_Province" Association="OStoreDBModel.FK_DeliveryChannelMapProvince_Province">
+            <End Role="Province" EntitySet="Provinces" />
+            <End Role="DeliveryChannelMapProvince" EntitySet="DeliveryChannelMapProvinces" />
+          </AssociationSet>
           <AssociationSet Name="FK_District_Province" Association="OStoreDBModel.FK_District_Province">
             <End Role="Province" EntitySet="Provinces" />
             <End Role="District" EntitySet="Districts" />
@@ -1946,9 +2067,9 @@
             <End Role="Person" EntitySet="People" />
             <End Role="PersonOrder" EntitySet="PersonOrders" />
           </AssociationSet>
-          <AssociationSet Name="FK_ShopingCard_Person" Association="OStoreDBModel.FK_ShopingCard_Person">
+          <AssociationSet Name="FK_ShoppingCart_Person" Association="OStoreDBModel.FK_ShoppingCart_Person">
             <End Role="Person" EntitySet="People" />
-            <End Role="ShopingCard" EntitySet="ShopingCards" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCarts" />
           </AssociationSet>
           <AssociationSet Name="FK_PersonAddress_PostalCode" Association="OStoreDBModel.FK_PersonAddress_PostalCode">
             <End Role="PostalCode" EntitySet="PostalCodes" />
@@ -2038,9 +2159,9 @@
             <End Role="ProductItem" EntitySet="ProductItems" />
             <End Role="ProductItemMapVariant" EntitySet="ProductItemMapVariants" />
           </AssociationSet>
-          <AssociationSet Name="FK_ShopingCardDetail_ProductItem" Association="OStoreDBModel.FK_ShopingCardDetail_ProductItem">
+          <AssociationSet Name="FK_ShoppingCartDetail_ProductItem" Association="OStoreDBModel.FK_ShoppingCartDetail_ProductItem">
             <End Role="ProductItem" EntitySet="ProductItems" />
-            <End Role="ShopingCardDetail" EntitySet="ShopingCardDetails" />
+            <End Role="ShoppingCartDetail" EntitySet="ShoppingCartDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_ProductItemMapVariant_ProductVariant" Association="OStoreDBModel.FK_ProductItemMapVariant_ProductVariant">
             <End Role="ProductVariant" EntitySet="ProductVariants" />
@@ -2086,21 +2207,25 @@
             <End Role="Shop" EntitySet="Shops" />
             <End Role="SaleChannel" EntitySet="SaleChannels" />
           </AssociationSet>
-          <AssociationSet Name="FK_ShopingCard_Shop" Association="OStoreDBModel.FK_ShopingCard_Shop">
+          <AssociationSet Name="FK_ShopMapDeliveryChannel_Shop" Association="OStoreDBModel.FK_ShopMapDeliveryChannel_Shop">
             <End Role="Shop" EntitySet="Shops" />
-            <End Role="ShopingCard" EntitySet="ShopingCards" />
+            <End Role="ShopMapDeliveryChannel" EntitySet="ShopMapDeliveryChannels" />
           </AssociationSet>
           <AssociationSet Name="FK_ShopMapPaymentChannel_Shop" Association="OStoreDBModel.FK_ShopMapPaymentChannel_Shop">
             <End Role="Shop" EntitySet="Shops" />
             <End Role="ShopMapPaymentChannel" EntitySet="ShopMapPaymentChannels" />
           </AssociationSet>
-          <AssociationSet Name="FK_ShopingCardDetail_ShopingCard" Association="OStoreDBModel.FK_ShopingCardDetail_ShopingCard">
-            <End Role="ShopingCard" EntitySet="ShopingCards" />
-            <End Role="ShopingCardDetail" EntitySet="ShopingCardDetails" />
+          <AssociationSet Name="FK_ShoppingCart_Shop" Association="OStoreDBModel.FK_ShoppingCart_Shop">
+            <End Role="Shop" EntitySet="Shops" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCarts" />
           </AssociationSet>
           <AssociationSet Name="FK_ShopPaymentAccount_ShopMapPaymentChannel" Association="OStoreDBModel.FK_ShopPaymentAccount_ShopMapPaymentChannel">
             <End Role="ShopMapPaymentChannel" EntitySet="ShopMapPaymentChannels" />
             <End Role="ShopPaymentAccount" EntitySet="ShopPaymentAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCartDetail_ShoppingCart" Association="OStoreDBModel.FK_ShoppingCartDetail_ShoppingCart">
+            <End Role="ShoppingCart" EntitySet="ShoppingCarts" />
+            <End Role="ShoppingCartDetail" EntitySet="ShoppingCartDetails" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="AddressType">
@@ -2295,6 +2420,36 @@
           <Property Name="UpdateBy" Type="Int32" />
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="DeliveryChannel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateBy" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="DeliveryChannelMapProvinces" Relationship="OStoreDBModel.FK_DeliveryChannelMapProvince_DeliveryChannel" FromRole="DeliveryChannel" ToRole="DeliveryChannelMapProvince" />
+          <NavigationProperty Name="ShopMapDeliveryChannels" Relationship="OStoreDBModel.FK_ShopMapDeliveryChannel_DeliveryChannel" FromRole="DeliveryChannel" ToRole="ShopMapDeliveryChannel" />
+        </EntityType>
+        <EntityType Name="DeliveryChannelMapProvince">
+          <Key>
+            <PropertyRef Name="DeliveryChannelId" />
+            <PropertyRef Name="ProvinceId" />
+          </Key>
+          <Property Name="DeliveryChannelId" Type="Int32" Nullable="false" />
+          <Property Name="ProvinceId" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateBy" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="DeliveryChannel" Relationship="OStoreDBModel.FK_DeliveryChannelMapProvince_DeliveryChannel" FromRole="DeliveryChannelMapProvince" ToRole="DeliveryChannel" />
+          <NavigationProperty Name="Province" Relationship="OStoreDBModel.FK_DeliveryChannelMapProvince_Province" FromRole="DeliveryChannelMapProvince" ToRole="Province" />
+        </EntityType>
         <EntityType Name="District">
           <Key>
             <PropertyRef Name="Id" />
@@ -2377,7 +2532,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ShopId" Type="Int32" />
+          <Property Name="ShopId" Type="Int32" Nullable="false" />
           <Property Name="Firstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Mobile1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -2394,7 +2549,7 @@
           <NavigationProperty Name="PersonAddresses" Relationship="OStoreDBModel.FK_PersonAddress_Person" FromRole="Person" ToRole="PersonAddress" />
           <NavigationProperty Name="PersonMapTypes" Relationship="OStoreDBModel.FK_PersonMapType_Person" FromRole="Person" ToRole="PersonMapType" />
           <NavigationProperty Name="PersonOrders" Relationship="OStoreDBModel.FK_PersonOrder_Person" FromRole="Person" ToRole="PersonOrder" />
-          <NavigationProperty Name="ShopingCards" Relationship="OStoreDBModel.FK_ShopingCard_Person" FromRole="Person" ToRole="ShopingCard" />
+          <NavigationProperty Name="ShoppingCarts" Relationship="OStoreDBModel.FK_ShoppingCart_Person" FromRole="Person" ToRole="ShoppingCart" />
         </EntityType>
         <EntityType Name="PersonAddress">
           <Key>
@@ -2608,7 +2763,7 @@
           <NavigationProperty Name="PersonOrderDetails" Relationship="OStoreDBModel.FK_PersonOrderDetail_ProductItem" FromRole="ProductItem" ToRole="PersonOrderDetail" />
           <NavigationProperty Name="Product" Relationship="OStoreDBModel.FK_ProductItem_Product" FromRole="ProductItem" ToRole="Product" />
           <NavigationProperty Name="ProductItemMapVariants" Relationship="OStoreDBModel.FK_ProductItemMapVariant_ProductItem" FromRole="ProductItem" ToRole="ProductItemMapVariant" />
-          <NavigationProperty Name="ShopingCardDetails" Relationship="OStoreDBModel.FK_ShopingCardDetail_ProductItem" FromRole="ProductItem" ToRole="ShopingCardDetail" />
+          <NavigationProperty Name="ShoppingCartDetails" Relationship="OStoreDBModel.FK_ShoppingCartDetail_ProductItem" FromRole="ProductItem" ToRole="ShoppingCartDetail" />
         </EntityType>
         <EntityType Name="ProductItemMapVariant">
           <Key>
@@ -2836,6 +2991,7 @@
           <Property Name="UpdateBy" Type="Int32" />
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Country" Relationship="OStoreDBModel.FK_Province_Country" FromRole="Province" ToRole="Country" />
+          <NavigationProperty Name="DeliveryChannelMapProvinces" Relationship="OStoreDBModel.FK_DeliveryChannelMapProvince_Province" FromRole="Province" ToRole="DeliveryChannelMapProvince" />
           <NavigationProperty Name="Districts" Relationship="OStoreDBModel.FK_District_Province" FromRole="Province" ToRole="District" />
         </EntityType>
         <EntityType Name="ReviewStatu">
@@ -2896,40 +3052,24 @@
           <NavigationProperty Name="ProductVariants" Relationship="OStoreDBModel.FK_Variant_Shop" FromRole="Shop" ToRole="ProductVariant" />
           <NavigationProperty Name="Promotions" Relationship="OStoreDBModel.FK_Promotion_Shop" FromRole="Shop" ToRole="Promotion" />
           <NavigationProperty Name="SaleChannels" Relationship="OStoreDBModel.FK_SaleChannel_Shop" FromRole="Shop" ToRole="SaleChannel" />
-          <NavigationProperty Name="ShopingCards" Relationship="OStoreDBModel.FK_ShopingCard_Shop" FromRole="Shop" ToRole="ShopingCard" />
+          <NavigationProperty Name="ShopMapDeliveryChannels" Relationship="OStoreDBModel.FK_ShopMapDeliveryChannel_Shop" FromRole="Shop" ToRole="ShopMapDeliveryChannel" />
           <NavigationProperty Name="ShopMapPaymentChannels" Relationship="OStoreDBModel.FK_ShopMapPaymentChannel_Shop" FromRole="Shop" ToRole="ShopMapPaymentChannel" />
+          <NavigationProperty Name="ShoppingCarts" Relationship="OStoreDBModel.FK_ShoppingCart_Shop" FromRole="Shop" ToRole="ShoppingCart" />
         </EntityType>
-        <EntityType Name="ShopingCard">
+        <EntityType Name="ShopMapDeliveryChannel">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="DeliveryChannelId" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ShopId" Type="Int32" Nullable="false" />
-          <Property Name="PersonId" Type="Int32" />
+          <Property Name="DeliveryChannelId" Type="Int32" Nullable="false" />
           <Property Name="IsActive" Type="Boolean" Nullable="false" />
           <Property Name="CreateBy" Type="Int32" />
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UpdateBy" Type="Int32" />
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Person" Relationship="OStoreDBModel.FK_ShopingCard_Person" FromRole="ShopingCard" ToRole="Person" />
-          <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_ShopingCard_Shop" FromRole="ShopingCard" ToRole="Shop" />
-          <NavigationProperty Name="ShopingCardDetails" Relationship="OStoreDBModel.FK_ShopingCardDetail_ShopingCard" FromRole="ShopingCard" ToRole="ShopingCardDetail" />
-        </EntityType>
-        <EntityType Name="ShopingCardDetail">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" />
-          <Property Name="ShopingCardId" Type="Int32" Nullable="false" />
-          <Property Name="ProductItemId" Type="Int32" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
-          <Property Name="CreateBy" Type="Int32" />
-          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="UpdateBy" Type="Int32" />
-          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="ProductItem" Relationship="OStoreDBModel.FK_ShopingCardDetail_ProductItem" FromRole="ShopingCardDetail" ToRole="ProductItem" />
-          <NavigationProperty Name="ShopingCard" Relationship="OStoreDBModel.FK_ShopingCardDetail_ShopingCard" FromRole="ShopingCardDetail" ToRole="ShopingCard" />
+          <NavigationProperty Name="DeliveryChannel" Relationship="OStoreDBModel.FK_ShopMapDeliveryChannel_DeliveryChannel" FromRole="ShopMapDeliveryChannel" ToRole="DeliveryChannel" />
+          <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_ShopMapDeliveryChannel_Shop" FromRole="ShopMapDeliveryChannel" ToRole="Shop" />
         </EntityType>
         <EntityType Name="ShopMapPaymentChannel">
           <Key>
@@ -2964,6 +3104,38 @@
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Bank" Relationship="OStoreDBModel.FK_ShopPaymentAccount_Bank" FromRole="ShopPaymentAccount" ToRole="Bank" />
           <NavigationProperty Name="ShopMapPaymentChannel" Relationship="OStoreDBModel.FK_ShopPaymentAccount_ShopMapPaymentChannel" FromRole="ShopPaymentAccount" ToRole="ShopMapPaymentChannel" />
+        </EntityType>
+        <EntityType Name="ShoppingCart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShopId" Type="Int32" Nullable="false" />
+          <Property Name="PersonId" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateBy" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Person" Relationship="OStoreDBModel.FK_ShoppingCart_Person" FromRole="ShoppingCart" ToRole="Person" />
+          <NavigationProperty Name="Shop" Relationship="OStoreDBModel.FK_ShoppingCart_Shop" FromRole="ShoppingCart" ToRole="Shop" />
+          <NavigationProperty Name="ShoppingCartDetails" Relationship="OStoreDBModel.FK_ShoppingCartDetail_ShoppingCart" FromRole="ShoppingCart" ToRole="ShoppingCartDetail" />
+        </EntityType>
+        <EntityType Name="ShoppingCartDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="ShoppingCartId" Type="Int32" Nullable="false" />
+          <Property Name="ProductItemId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateBy" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ProductItem" Relationship="OStoreDBModel.FK_ShoppingCartDetail_ProductItem" FromRole="ShoppingCartDetail" ToRole="ProductItem" />
+          <NavigationProperty Name="ShoppingCart" Relationship="OStoreDBModel.FK_ShoppingCartDetail_ShoppingCart" FromRole="ShoppingCartDetail" ToRole="ShoppingCart" />
         </EntityType>
         <EntityType Name="SubDistrict">
           <Key>
@@ -3173,6 +3345,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_DeliveryChannelMapProvince_DeliveryChannel">
+          <End Type="OStoreDBModel.DeliveryChannel" Role="DeliveryChannel" Multiplicity="1" />
+          <End Type="OStoreDBModel.DeliveryChannelMapProvince" Role="DeliveryChannelMapProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryChannel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DeliveryChannelMapProvince">
+              <PropertyRef Name="DeliveryChannelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopMapDeliveryChannel_DeliveryChannel">
+          <End Type="OStoreDBModel.DeliveryChannel" Role="DeliveryChannel" Multiplicity="1" />
+          <End Type="OStoreDBModel.ShopMapDeliveryChannel" Role="ShopMapDeliveryChannel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DeliveryChannel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopMapDeliveryChannel">
+              <PropertyRef Name="DeliveryChannelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeliveryChannelMapProvince_Province">
+          <End Type="OStoreDBModel.Province" Role="Province" Multiplicity="1" />
+          <End Type="OStoreDBModel.DeliveryChannelMapProvince" Role="DeliveryChannelMapProvince" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Province">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DeliveryChannelMapProvince">
+              <PropertyRef Name="ProvinceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_District_Province">
           <End Type="OStoreDBModel.Province" Role="Province" Multiplicity="1" />
           <End Type="OStoreDBModel.District" Role="District" Multiplicity="*" />
@@ -3210,7 +3418,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Person_Shop">
-          <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="0..1" />
+          <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="1" />
           <End Type="OStoreDBModel.Person" Role="Person" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Shop">
@@ -3257,14 +3465,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ShopingCard_Person">
+        <Association Name="FK_ShoppingCart_Person">
           <End Type="OStoreDBModel.Person" Role="Person" Multiplicity="0..1" />
-          <End Type="OStoreDBModel.ShopingCard" Role="ShopingCard" Multiplicity="*" />
+          <End Type="OStoreDBModel.ShoppingCart" Role="ShoppingCart" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ShopingCard">
+            <Dependent Role="ShoppingCart">
               <PropertyRef Name="PersonId" />
             </Dependent>
           </ReferentialConstraint>
@@ -3533,14 +3741,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ShopingCardDetail_ProductItem">
+        <Association Name="FK_ShoppingCartDetail_ProductItem">
           <End Type="OStoreDBModel.ProductItem" Role="ProductItem" Multiplicity="1" />
-          <End Type="OStoreDBModel.ShopingCardDetail" Role="ShopingCardDetail" Multiplicity="*" />
+          <End Type="OStoreDBModel.ShoppingCartDetail" Role="ShoppingCartDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductItem">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ShopingCardDetail">
+            <Dependent Role="ShoppingCartDetail">
               <PropertyRef Name="ProductItemId" />
             </Dependent>
           </ReferentialConstraint>
@@ -3681,14 +3889,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ShopingCard_Shop">
+        <Association Name="FK_ShopMapDeliveryChannel_Shop">
           <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="1" />
-          <End Type="OStoreDBModel.ShopingCard" Role="ShopingCard" Multiplicity="*" />
+          <End Type="OStoreDBModel.ShopMapDeliveryChannel" Role="ShopMapDeliveryChannel" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Shop">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ShopingCard">
+            <Dependent Role="ShopMapDeliveryChannel">
               <PropertyRef Name="ShopId" />
             </Dependent>
           </ReferentialConstraint>
@@ -3705,15 +3913,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ShopingCardDetail_ShopingCard">
-          <End Type="OStoreDBModel.ShopingCard" Role="ShopingCard" Multiplicity="1" />
-          <End Type="OStoreDBModel.ShopingCardDetail" Role="ShopingCardDetail" Multiplicity="*" />
+        <Association Name="FK_ShoppingCart_Shop">
+          <End Type="OStoreDBModel.Shop" Role="Shop" Multiplicity="1" />
+          <End Type="OStoreDBModel.ShoppingCart" Role="ShoppingCart" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ShopingCard">
+            <Principal Role="Shop">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ShopingCardDetail">
-              <PropertyRef Name="ShopingCardId" />
+            <Dependent Role="ShoppingCart">
+              <PropertyRef Name="ShopId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3726,6 +3934,18 @@
             </Principal>
             <Dependent Role="ShopPaymentAccount">
               <PropertyRef Name="ShopMapPaymentChannelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCartDetail_ShoppingCart">
+          <End Type="OStoreDBModel.ShoppingCart" Role="ShoppingCart" Multiplicity="1" />
+          <End Type="OStoreDBModel.ShoppingCartDetail" Role="ShoppingCartDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShoppingCart">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShoppingCartDetail">
+              <PropertyRef Name="ShoppingCartId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -3910,6 +4130,33 @@
                 <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeliveryChannels">
+            <EntityTypeMapping TypeName="OStoreDBModel.DeliveryChannel">
+              <MappingFragment StoreEntitySet="DeliveryChannel">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeliveryChannelMapProvinces">
+            <EntityTypeMapping TypeName="OStoreDBModel.DeliveryChannelMapProvince">
+              <MappingFragment StoreEntitySet="DeliveryChannelMapProvince">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+                <ScalarProperty Name="DeliveryChannelId" ColumnName="DeliveryChannelId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4448,32 +4695,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ShopingCards">
-            <EntityTypeMapping TypeName="OStoreDBModel.ShopingCard">
-              <MappingFragment StoreEntitySet="ShopingCard">
+          <EntitySetMapping Name="ShopMapDeliveryChannels">
+            <EntityTypeMapping TypeName="OStoreDBModel.ShopMapDeliveryChannel">
+              <MappingFragment StoreEntitySet="ShopMapDeliveryChannel">
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
                 <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="DeliveryChannelId" ColumnName="DeliveryChannelId" />
                 <ScalarProperty Name="ShopId" ColumnName="ShopId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ShopingCardDetails">
-            <EntityTypeMapping TypeName="OStoreDBModel.ShopingCardDetail">
-              <MappingFragment StoreEntitySet="ShopingCardDetail">
-                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
-                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="ProductItemId" ColumnName="ProductItemId" />
-                <ScalarProperty Name="ShopingCardId" ColumnName="ShopingCardId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4504,6 +4735,35 @@
                 <ScalarProperty Name="BankId" ColumnName="BankId" />
                 <ScalarProperty Name="Account" ColumnName="Account" />
                 <ScalarProperty Name="ShopMapPaymentChannelId" ColumnName="ShopMapPaymentChannelId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShoppingCarts">
+            <EntityTypeMapping TypeName="OStoreDBModel.ShoppingCart">
+              <MappingFragment StoreEntitySet="ShoppingCart">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShoppingCartDetails">
+            <EntityTypeMapping TypeName="OStoreDBModel.ShoppingCartDetail">
+              <MappingFragment StoreEntitySet="ShoppingCartDetail">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductItemId" ColumnName="ProductItemId" />
+                <ScalarProperty Name="ShoppingCartId" ColumnName="ShoppingCartId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
