@@ -1,0 +1,4 @@
+C:\Projects\OnlineStore\Library\Helper\Library.Helper.Cryptogram\bin\Debug\Library.Helper.Cryptogram.dll
+C:\Projects\OnlineStore\Library\Helper\Library.Helper.Cryptogram\bin\Debug\Library.Helper.Cryptogram.pdb
+C:\Projects\OnlineStore\Library\Helper\Library.Helper.Cryptogram\obj\Debug\Library.Helper.Cryptogram.dll
+C:\Projects\OnlineStore\Library\Helper\Library.Helper.Cryptogram\obj\Debug\Library.Helper.Cryptogram.pdb

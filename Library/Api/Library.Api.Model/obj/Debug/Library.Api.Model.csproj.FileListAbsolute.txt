@@ -1,0 +1,8 @@
+C:\Projects\OShop\Library\Api\Library.Api.Model\bin\Debug\Library.Api.Model.dll
+C:\Projects\OShop\Library\Api\Library.Api.Model\bin\Debug\Library.Api.Model.pdb
+C:\Projects\OShop\Library\Api\Library.Api.Model\obj\Debug\Library.Api.Model.dll
+C:\Projects\OShop\Library\Api\Library.Api.Model\obj\Debug\Library.Api.Model.pdb
+C:\Projects\OnlineStore\Library\Api\Library.Api.Model\bin\Debug\Library.Api.Model.dll
+C:\Projects\OnlineStore\Library\Api\Library.Api.Model\bin\Debug\Library.Api.Model.pdb
+C:\Projects\OnlineStore\Library\Api\Library.Api.Model\obj\Debug\Library.Api.Model.dll
+C:\Projects\OnlineStore\Library\Api\Library.Api.Model\obj\Debug\Library.Api.Model.pdb

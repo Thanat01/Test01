@@ -1,0 +1,5 @@
+C:\Projects\OnlineStore\Library\Business\Library.Business\bin\Debug\Library.Business.dll
+C:\Projects\OnlineStore\Library\Business\Library.Business\bin\Debug\Library.Business.pdb
+C:\Projects\OnlineStore\Library\Business\Library.Business\obj\Debug\Library.Business.csprojResolveAssemblyReference.cache
+C:\Projects\OnlineStore\Library\Business\Library.Business\obj\Debug\Library.Business.dll
+C:\Projects\OnlineStore\Library\Business\Library.Business\obj\Debug\Library.Business.pdb

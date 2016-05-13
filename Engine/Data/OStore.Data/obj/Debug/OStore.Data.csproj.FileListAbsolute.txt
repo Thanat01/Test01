@@ -1,0 +1,10 @@
+C:\Projects\OnlineStore\Engine\Data\OStore.Data\bin\Debug\OStore.Data.dll.config
+C:\Projects\OnlineStore\Engine\Data\OStore.Data\bin\Debug\OStore.Data.dll
+C:\Projects\OnlineStore\Engine\Data\OStore.Data\bin\Debug\OStore.Data.pdb
+C:\Projects\OnlineStore\Engine\Data\OStore.Data\bin\Debug\EntityFramework.dll
+C:\Projects\OnlineStore\Engine\Data\OStore.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\OnlineStore\Engine\Data\OStore.Data\bin\Debug\EntityFramework.xml
+C:\Projects\OnlineStore\Engine\Data\OStore.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\OnlineStore\Engine\Data\OStore.Data\obj\Debug\OStore.Data.csprojResolveAssemblyReference.cache
+C:\Projects\OnlineStore\Engine\Data\OStore.Data\obj\Debug\OStore.Data.dll
+C:\Projects\OnlineStore\Engine\Data\OStore.Data\obj\Debug\OStore.Data.pdb

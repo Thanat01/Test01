@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="97dde10b5bde4a229462f3768b86a236" Name="Diagram1">
+        <EntityTypeShape EntityType="OStoreDBModel.AddressType" Width="1.5" PointX="3" PointY="26.75" />
+        <EntityTypeShape EntityType="OStoreDBModel.AuthorizeExternalSystemUser" Width="1.5" PointX="13.5" PointY="29.25" />
+        <EntityTypeShape EntityType="OStoreDBModel.AuthorizeGroup" Width="1.5" PointX="3" PointY="59.875" />
+        <EntityTypeShape EntityType="OStoreDBModel.AuthorizeGroupMapRole" Width="1.5" PointX="8.25" PointY="50.125" />
+        <EntityTypeShape EntityType="OStoreDBModel.AuthorizeRole" Width="1.5" PointX="3" PointY="39.5" />
+        <EntityTypeShape EntityType="OStoreDBModel.AuthorizeRoleMapMenu" Width="1.5" PointX="8.25" PointY="43.875" />
+        <EntityTypeShape EntityType="OStoreDBModel.AuthorizeUser" Width="1.5" PointX="8.25" PointY="29" />
+        <EntityTypeShape EntityType="OStoreDBModel.AuthorizeUserMapGroup" Width="1.5" PointX="10.5" PointY="44.875" />
+        <EntityTypeShape EntityType="OStoreDBModel.Bank" Width="1.5" PointX="11" PointY="34.25" />
+        <EntityTypeShape EntityType="OStoreDBModel.Country" Width="1.5" PointX="1.5" PointY="0.75" />
+        <EntityTypeShape EntityType="OStoreDBModel.Currency" Width="1.5" PointX="3.75" PointY="3.5" />
+        <EntityTypeShape EntityType="OStoreDBModel.District" Width="1.5" PointX="1.5" PointY="11.375" />
+        <EntityTypeShape EntityType="OStoreDBModel.ExternalSystem" Width="1.5" PointX="11.25" PointY="25.625" />
+        <EntityTypeShape EntityType="OStoreDBModel.Menu" Width="1.5" PointX="6" PointY="61.375" />
+        <EntityTypeShape EntityType="OStoreDBModel.OrderStatu" Width="1.5" PointX="5.75" PointY="3.5" />
+        <EntityTypeShape EntityType="OStoreDBModel.PaymentChannel" Width="1.5" PointX="3.75" PointY="12.375" />
+        <EntityTypeShape EntityType="OStoreDBModel.Person" Width="1.5" PointX="3" PointY="21.25" />
+        <EntityTypeShape EntityType="OStoreDBModel.PersonAddress" Width="1.5" PointX="5.25" PointY="20.875" />
+        <EntityTypeShape EntityType="OStoreDBModel.PersonMapType" Width="1.5" PointX="8.25" PointY="22.25" />
+        <EntityTypeShape EntityType="OStoreDBModel.PersonOrder" Width="1.5" PointX="10.5" PointY="38.375" />
+        <EntityTypeShape EntityType="OStoreDBModel.PersonOrderDetail" Width="1.5" PointX="15.75" PointY="39.5" />
+        <EntityTypeShape EntityType="OStoreDBModel.PersonType" Width="1.5" PointX="6" PointY="17.25" />
+        <EntityTypeShape EntityType="OStoreDBModel.PostalCode" Width="1.5" PointX="3" PointY="16.375" />
+        <EntityTypeShape EntityType="OStoreDBModel.Product" Width="1.5" PointX="11.25" PointY="48.375" />
+        <EntityTypeShape EntityType="OStoreDBModel.ProductCategory" Width="1.5" PointX="3" PointY="47.875" />
+        <EntityTypeShape EntityType="OStoreDBModel.ProductImage" Width="1.5" PointX="13.5" PointY="59.625" />
+        <EntityTypeShape EntityType="OStoreDBModel.ProductItem" Width="1.5" PointX="13.5" PointY="48.5" />
+        <EntityTypeShape EntityType="OStoreDBModel.ProductItemMapVariant" Width="1.5" PointX="8.25" PointY="39.625" />
+        <EntityTypeShape EntityType="OStoreDBModel.ProductMapCategory" Width="1.5" PointX="5.25" PointY="49" />
+        <EntityTypeShape EntityType="OStoreDBModel.ProductMapProduct" Width="1.5" PointX="3" PointY="31" />
+        <EntityTypeShape EntityType="OStoreDBModel.ProductMapVariant" Width="1.5" PointX="5.25" PointY="44.625" />
+        <EntityTypeShape EntityType="OStoreDBModel.ProductMapVariantDetail" Width="1.5" PointX="7.5" PointY="35.375" />
+        <EntityTypeShape EntityType="OStoreDBModel.ProductRelationType" Width="1.5" PointX="0.75" PointY="30.375" />
+        <EntityTypeShape EntityType="OStoreDBModel.ProductReview" Width="1.5" PointX="13.5" PointY="55.375" />
+        <EntityTypeShape EntityType="OStoreDBModel.ProductVariant" Width="1.5" PointX="3" PointY="35.5" />
+        <EntityTypeShape EntityType="OStoreDBModel.ProductVariantDetail" Width="1.5" PointX="5.25" PointY="35.5" />
+        <EntityTypeShape EntityType="OStoreDBModel.Promotion" Width="1.5" PointX="3" PointY="53.75" />
+        <EntityTypeShape EntityType="OStoreDBModel.PromotionMapCategory" Width="1.5" PointX="5.25" PointY="53.125" />
+        <EntityTypeShape EntityType="OStoreDBModel.PromotionMapProduct" Width="1.5" PointX="5.25" PointY="57" />
+        <EntityTypeShape EntityType="OStoreDBModel.Province" Width="1.5" PointX="1.5" PointY="6.375" />
+        <EntityTypeShape EntityType="OStoreDBModel.ReviewStatu" Width="1.5" PointX="3.75" PointY="8.5" />
+        <EntityTypeShape EntityType="OStoreDBModel.SaleChannel" Width="1.5" PointX="3" PointY="64.125" />
+        <EntityTypeShape EntityType="OStoreDBModel.Shop" Width="1.5" PointX="0.75" PointY="34.75" />
+        <EntityTypeShape EntityType="OStoreDBModel.ShopingCard" Width="1.5" PointX="5.25" PointY="29.5" />
+        <EntityTypeShape EntityType="OStoreDBModel.ShopingCardDetail" Width="1.5" PointX="10.5" PointY="29.5" />
+        <EntityTypeShape EntityType="OStoreDBModel.ShopMapPaymentChannel" Width="1.5" PointX="6" PointY="40.25" />
+        <EntityTypeShape EntityType="OStoreDBModel.ShopPaymentAccount" Width="1.5" PointX="13.25" PointY="40" />
+        <EntityTypeShape EntityType="OStoreDBModel.SubDistrict" Width="1.5" PointX="0.75" PointY="16.375" />
+        <EntityTypeShape EntityType="OStoreDBModel.TimeZone" Width="1.5" PointX="5.75" PointY="7.5" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonAddress_AddressType" />
+        <AssociationConnector Association="OStoreDBModel.FK_AuthorizeExternalSystemUser_AuthorizeUser" />
+        <AssociationConnector Association="OStoreDBModel.FK_AuthorizeExternalSystemUser_ExternalSystem" />
+        <AssociationConnector Association="OStoreDBModel.FK_AuthorizeGroup_Shop" />
+        <AssociationConnector Association="OStoreDBModel.FK_AuthorizeGroupMapRole_AuthorizeGroup" />
+        <AssociationConnector Association="OStoreDBModel.FK_AuthorizeUserMapGroup_AuthorizeGroup" />
+        <AssociationConnector Association="OStoreDBModel.FK_AuthorizeGroupMapRole_AuthorizeRole" />
+        <AssociationConnector Association="OStoreDBModel.FK_AuthorizeRole_Shop" />
+        <AssociationConnector Association="OStoreDBModel.FK_AuthorizeRoleMapMenu_AuthorizeRole" />
+        <AssociationConnector Association="OStoreDBModel.FK_AuthorizeRoleMapMenu_Menu" />
+        <AssociationConnector Association="OStoreDBModel.FK_AuthorizeUser_Person" />
+        <AssociationConnector Association="OStoreDBModel.FK_AuthorizeUser_Shop" />
+        <AssociationConnector Association="OStoreDBModel.FK_AuthorizeUserMapGroup_AuthorizeUser" />
+        <AssociationConnector Association="OStoreDBModel.FK_ShopPaymentAccount_Bank" />
+        <AssociationConnector Association="OStoreDBModel.FK_Province_Country" />
+        <AssociationConnector Association="OStoreDBModel.FK_District_Province" />
+        <AssociationConnector Association="OStoreDBModel.FK_SubDistrict_District" />
+        <AssociationConnector Association="OStoreDBModel.FK_ShopMapPaymentChannel_PaymentChannel1" />
+        <AssociationConnector Association="OStoreDBModel.FK_Person_Shop" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonAddress_Person" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonMapType_Person" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonOrder_Person" />
+        <AssociationConnector Association="OStoreDBModel.FK_ShopingCard_Person" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonAddress_PostalCode" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonOrder_PersonAddress" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonOrder_PersonAddress1" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonMapType_PersonType" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonOrder_Promotion" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonOrder_SaleChannel" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonOrder_Shop" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonOrderDetail_PersonOrder" />
+        <AssociationConnector Association="OStoreDBModel.FK_PersonOrderDetail_ProductItem" />
+        <AssociationConnector Association="OStoreDBModel.FK_PostalCode_SubDistrict" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductImage_Product" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductItem_Product" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductMapCategory_Product" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductMapProduct_Product1" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductMapVariant_Product" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductReview_Product" />
+        <AssociationConnector Association="OStoreDBModel.FK_PromotionMapProduct_Product" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductCategory_ProductCategory1" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductCategory_Shop" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductMapCategory_ProductCategory" />
+        <AssociationConnector Association="OStoreDBModel.FK_PromotionMapCategory_ProductCategory" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductItemMapVariant_ProductItem" />
+        <AssociationConnector Association="OStoreDBModel.FK_ShopingCardDetail_ProductItem" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductItemMapVariant_ProductVariant" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductMapProduct_Product" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductMapProduct_Shop" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductMapVariantDetail_ProductMapVariant" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductMapVariantDetail_ProductVariantDetail" />
+        <AssociationConnector Association="OStoreDBModel.FK_ProductVariantDetail_ProductVariant" />
+        <AssociationConnector Association="OStoreDBModel.FK_Variant_Shop" />
+        <AssociationConnector Association="OStoreDBModel.FK_Promotion_Shop" />
+        <AssociationConnector Association="OStoreDBModel.FK_PromotionMapCategory_Promotion" />
+        <AssociationConnector Association="OStoreDBModel.FK_PromotionMapProduct_Promotion" />
+        <AssociationConnector Association="OStoreDBModel.FK_SaleChannel_Shop" />
+        <AssociationConnector Association="OStoreDBModel.FK_ShopingCard_Shop" />
+        <AssociationConnector Association="OStoreDBModel.FK_ShopMapPaymentChannel_Shop" />
+        <AssociationConnector Association="OStoreDBModel.FK_ShopingCardDetail_ShopingCard" />
+        <AssociationConnector Association="OStoreDBModel.FK_ShopPaymentAccount_ShopMapPaymentChannel" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
